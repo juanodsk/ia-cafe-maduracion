@@ -11,6 +11,8 @@ services:
       - "${APP_BIND:-0.0.0.0}:${APP_PORT:-8765}:8765"
     environment:
       CAFE_DEPLOYMENT: server
+      CAFE_INFERENCE_BATCH_SIZE: ${CAFE_INFERENCE_BATCH_SIZE:-4}
+      CAFE_NUM_THREADS: ${CAFE_NUM_THREADS:-2}
     mem_limit: ${APP_MEMORY_LIMIT:-4g}
     cpus: ${APP_CPUS:-2.0}
     read_only: true

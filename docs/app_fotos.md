@@ -31,6 +31,8 @@ El servidor escucha únicamente en `127.0.0.1`. Las fotos se mantienen en memori
 
 El sistema es el mismo detector de cajas utilizado en la cámara: señala cada fruto con un rectángulo, sin segmentar su contorno exacto. Las solicitudes de inferencia se atienden una a la vez para proteger la GPU y el estado de Ultralytics. Cambiar de clasificador libera el anterior antes de cargar otro. La app no usa ni modifica el conjunto de prueba.
 
+Si ya hay un análisis activo, una segunda solicitud recibe un aviso HTTP 429 para reintentar, en lugar de dejar otra foto esperando en memoria. En CPU se clasifican lotes de cuatro recortes por defecto. La interfaz interpreta también errores de texto o HTML devueltos por el proxy o el servidor y muestra su código HTTP; ya no intenta tratar todas las respuestas como JSON.
+
 ## Instalación y compilación
 
 La interfaz ya compilada queda en `web/dist`. Para reconstruirla, con Node.js y pnpm instalados:

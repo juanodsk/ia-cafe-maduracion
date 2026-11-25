@@ -24,9 +24,12 @@ LABELS={'unripe':'Verde','semi_ripe':'Pinton','ripe':'Maduro','overripe':'Sobrem
 
 class CameraPipeline:
     def __init__(self,detector_path,model_name='efficientnet_b0',device='cuda',
-                 detector_conf=.3,classifier_conf=.55,manual=False):
+                 detector_conf=.3,classifier_conf=.55,manual=False,classifier_batch_size=None):
         self.device=device;self.manual=manual;self.detector_conf=detector_conf
         self.classifier_conf=classifier_conf
+        self.classifier_batch_size=classifier_batch_size if classifier_batch_size is not None else (4 if device=='cpu' else 32)
+        if not isinstance(self.classifier_batch_size,int) or not 1<=self.classifier_batch_size<=32:
+            raise ValueError('classifier_batch_size debe estar entre 1 y 32')
         self.models=[]
         for name in MODEL_NAMES if model_name=='ensemble' else (model_name,):
             model,_=load_classifier(name,device)
@@ -55,8 +58,9 @@ class CameraPipeline:
                 except ValueError: continue
                 boxes.append(bounds);detection_scores.append(float(score))
         annotations=[]
-        for start in range(0,len(boxes),32):
-            chunk=boxes[start:start+32]
+        batch_size=self.classifier_batch_size
+        for start in range(0,len(boxes),batch_size):
+            chunk=boxes[start:start+batch_size]
             crops=[Image.fromarray(cv2.cvtColor(frame[y1:y2,x1:x2],cv2.COLOR_BGR2RGB)) for x1,y1,x2,y2 in chunk]
             probabilities=[]
             for _,model,transform in self.models:

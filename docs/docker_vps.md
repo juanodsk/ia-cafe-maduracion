@@ -53,6 +53,10 @@ La compilación descarga las imágenes base y las dependencias, por lo que neces
 
 Compose configura un solo proceso de inferencia, reinicio automático y un límite de **2 CPU / 4 GB de RAM** para el contenedor. Estos son límites configurables, no una garantía de rendimiento para cualquier volumen de usuarios. Reserva memoria adicional para Linux y otros servicios. El ensemble y ViT consumen más recursos que EfficientNet B0. Mantén un solo worker; varios duplicarían los modelos en memoria.
 
+`CAFE_INFERENCE_BATCH_SIZE=4` limita los recortes clasificados simultáneamente y `CAFE_NUM_THREADS=2` limita los hilos PyTorch. Ambos se pueden ajustar en Environment de Dokploy o en `.env`. Solo se admite un análisis activo; solicitudes adicionales reciben JSON HTTP 429 con indicación para reintentar. Uvicorn admite hasta 32 conexiones para que las conexiones persistentes del proxy, recursos estáticos y comprobaciones de salud tengan margen; esto no habilita 32 inferencias simultáneas.
+
+Si aparece un error HTTP 502/503/504, revisa **Logs del servicio app**, su estado y los registros de Traefik. Un mensaje `JSON.parse` en el navegador ocultaba anteriormente estos errores cuando el intermediario devolvía texto o HTML. La interfaz ahora muestra el estado HTTP. Un reinicio en los registros no basta para afirmar que ocurrió un OOM; comprueba `OOMKilled` o el código de salida del contenedor antes de atribuirlo a memoria.
+
 ## Usar una imagen ya construida
 
 Si prefieres no compilar en la VPS, exporta la imagen probada en este equipo:

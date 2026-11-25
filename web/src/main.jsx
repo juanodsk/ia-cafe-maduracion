@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import { readAnalysisResponse } from './api.js';
 
 const stages = [
   { key: 'unripe', label: 'Verde', color: '#42c665' },
@@ -81,14 +82,13 @@ function App() {
       const body = new FormData();
       body.append('file', photo); body.append('model', model);
       const response = await fetch('/api/analyze', { method: 'POST', body, signal: controller.signal });
-      const data = await response.json();
-      if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'No se pudo analizar la foto.');
+      const data = await readAnalysisResponse(response);
       if (version.current === id) {
         setResult({ ...data, example: useExample });
         setSelected(data.detections[0]?.id ?? null);
       }
     } catch (e) {
-      if (e.name !== 'AbortError' && version.current === id) setError(e.message === 'Failed to fetch' ? 'No hay conexión con el servidor local. Revisa que esté encendido.' : e.message);
+      if (e.name !== 'AbortError' && version.current === id) setError(e instanceof TypeError || e.name === 'NetworkError' ? 'No se pudo conectar con el servidor de análisis. Comprueba tu conexión y vuelve a intentarlo.' : e.message);
     } finally {
       if (version.current === id) setBusy(false);
     }

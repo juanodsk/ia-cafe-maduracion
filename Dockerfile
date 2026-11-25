@@ -17,6 +17,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     YOLO_CONFIG_DIR=/tmp/ultralytics \
     YOLO_AUTOINSTALL=false \
     CAFE_DEPLOYMENT=server \
+    CAFE_INFERENCE_BATCH_SIZE=4 \
+    CAFE_NUM_THREADS=2 \
     OMP_NUM_THREADS=2 \
     MKL_NUM_THREADS=2
 WORKDIR /app
@@ -52,4 +54,4 @@ EXPOSE 8765
 HEALTHCHECK --interval=30s --timeout=5s --start-period=45s --retries=3 \
     CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=4).close()"]
 # One worker keeps one model cache and one inference lock per container.
-CMD ["python", "-m", "uvicorn", "cafe_ml.web_api:app", "--host", "0.0.0.0", "--port", "8765", "--workers", "1", "--limit-concurrency", "8", "--timeout-keep-alive", "5"]
+CMD ["python", "-m", "uvicorn", "cafe_ml.web_api:app", "--host", "0.0.0.0", "--port", "8765", "--workers", "1", "--limit-concurrency", "32", "--timeout-keep-alive", "5"]

@@ -1,5 +1,7 @@
 import io
 import unittest
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -77,6 +79,30 @@ class WebApiTests(unittest.TestCase):
             self.assertEqual(self.client.get('/api/health').json()['deployment'], 'server')
         with patch.dict(web_api.os.environ, {'CAFE_DEPLOYMENT': 'local'}):
             self.assertEqual(self.client.get('/api/health').json()['deployment'], 'local')
+
+    def test_busy_analysis_returns_json_and_health_stays_available(self):
+        entered=threading.Event()
+        finish=threading.Event()
+        def slow_analysis(image,model):
+            entered.set()
+            if not finish.wait(5):
+                raise RuntimeError('Test inference was not released')
+            return {'total':0}
+        with patch.object(web_api,'analyze_photo',side_effect=slow_analysis):
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                first=executor.submit(self.upload,photo_bytes())
+                try:
+                    self.assertTrue(entered.wait(3))
+                    busy=self.upload(photo_bytes())
+                    self.assertEqual(busy.status_code,429)
+                    self.assertIn('análisis en curso',busy.json()['detail'])
+                    self.assertEqual(busy.headers['retry-after'],'5')
+                    self.assertEqual(self.client.get('/api/health').status_code,200)
+                finally:
+                    finish.set()
+                self.assertEqual(first.result(timeout=5).status_code,200)
+        with patch.object(web_api,'analyze_photo',return_value={'total':0}):
+            self.assertEqual(self.upload(photo_bytes()).status_code,200)
 
 
 if __name__ == '__main__':

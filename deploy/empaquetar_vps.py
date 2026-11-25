@@ -24,6 +24,7 @@ def source_files():
     files = [ROOT / name for name in fixed]
     files.extend(sorted((ROOT / 'cafe_ml').glob('*.py')))
     files.extend(sorted(path for path in (ROOT / 'web/src').rglob('*') if path.is_file()))
+    files.extend(sorted((ROOT / 'web/tests').glob('*.test.js')))
     return files
 
 

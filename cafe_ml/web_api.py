@@ -36,6 +36,7 @@ WEB_LABELS = {**LABELS, 'semi_ripe': 'Pintón', 'unknown': 'Incierto'}
 ModelName = Literal['efficientnet_b0', 'resnet50', 'densenet121', 'vit_b_16', 'swin_t', 'ensemble']
 app = FastAPI(title='Café · Madurez', docs_url=None, redoc_url=None)
 _lock = threading.Lock()
+_analysis_slot = threading.BoundedSemaphore(1)
 _pipeline = None
 _loaded_model = None
 logger = logging.getLogger(__name__)
@@ -77,10 +78,11 @@ def get_pipeline(model_name: str):
         gc.collect()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
-        torch.set_num_threads(4)
+        torch.set_num_threads(max(1,int(os.environ.get('CAFE_NUM_THREADS','2'))))
         _pipeline = CameraPipeline(
             ROOT / 'experimentos/detector_01/weights/best.pt', model_name,
             'cuda' if torch.cuda.is_available() else 'cpu',
+            classifier_batch_size=int(os.environ.get('CAFE_INFERENCE_BATCH_SIZE','4')),
         )
         _loaded_model = model_name
     return _pipeline
@@ -141,23 +143,30 @@ def example():
 
 @app.post('/api/analyze')
 async def analyze(file: UploadFile = File(...), model: ModelName = Form('efficientnet_b0')):
-    try:
-        payload = await file.read(MAX_BYTES + 1)
-    finally:
+    if not _analysis_slot.acquire(blocking=False):
         await file.close()
-    if len(payload) > MAX_BYTES:
-        raise HTTPException(413, 'El archivo supera 15 MB. Reduce su tamaño e intenta de nuevo.')
-    if not payload:
-        raise HTTPException(422, 'Selecciona una foto que no esté vacía.')
-    image = await run_in_threadpool(decode_photo, payload)
+        raise HTTPException(429, 'Ya hay un análisis en curso. Espera a que termine y vuelve a intentarlo.',
+                            headers={'Retry-After': '5'})
     try:
-        return await run_in_threadpool(analyze_photo, image, model)
-    except FileNotFoundError:
-        logger.exception('Missing model checkpoint')
-        raise HTTPException(503, 'Faltan pesos del modelo. Revisa la consola del servidor.') from None
-    except Exception:
-        logger.exception('Photo inference failed')
-        raise HTTPException(503, 'No se pudo completar el análisis. Revisa la consola e intenta de nuevo.') from None
+        try:
+            payload = await file.read(MAX_BYTES + 1)
+        finally:
+            await file.close()
+        if len(payload) > MAX_BYTES:
+            raise HTTPException(413, 'El archivo supera 15 MB. Reduce su tamaño e intenta de nuevo.')
+        if not payload:
+            raise HTTPException(422, 'Selecciona una foto que no esté vacía.')
+        image = await run_in_threadpool(decode_photo, payload)
+        try:
+            return await run_in_threadpool(analyze_photo, image, model)
+        except FileNotFoundError:
+            logger.exception('Missing model checkpoint')
+            raise HTTPException(503, 'Faltan pesos del modelo. Revisa la consola del servidor.') from None
+        except Exception:
+            logger.exception('Photo inference failed')
+            raise HTTPException(503, 'No se pudo completar el análisis. Revisa la consola e intenta de nuevo.') from None
+    finally:
+        _analysis_slot.release()
 
 
 dist = ROOT / 'web/dist'

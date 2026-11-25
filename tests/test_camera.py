@@ -13,6 +13,7 @@ class CameraTests(unittest.TestCase):
     def pipeline(self,manual=False):
         p=CameraPipeline.__new__(CameraPipeline)
         p.device='cpu';p.manual=manual;p.detector_conf=.3;p.classifier_conf=.55
+        p.classifier_batch_size=4
         def transform(image):
             self.assertEqual(image.getpixel((0,0)),(255,0,0))
             return torch.zeros(3,224,224)
@@ -47,5 +48,22 @@ class CameraTests(unittest.TestCase):
         empty=SimpleNamespace(xyxy=torch.empty((0,4)),conf=torch.empty(0))
         p.detector=SimpleNamespace(predict=lambda *a,**kw:[SimpleNamespace(boxes=empty)])
         self.assertEqual(p.process(np.zeros((80,100,3),dtype=np.uint8)),[])
+
+    def test_many_fruits_use_small_batches_without_losing_detection_order(self):
+        p=self.pipeline()
+        sizes=[]
+        class TrackingClassifier(FixedClassifier):
+            def forward(self,x):
+                sizes.append(len(x))
+                return super().forward(x)
+        p.models[0]=('test',TrackingClassifier(),p.models[0][2])
+        scores=torch.linspace(.6,.95,9)
+        boxes=SimpleNamespace(xyxy=torch.tensor([[10.,12.,45.,48.]]).repeat(9,1),conf=scores)
+        p.detector=SimpleNamespace(predict=lambda *a,**kw:[SimpleNamespace(boxes=boxes)])
+        frame=np.zeros((80,100,3),dtype=np.uint8);frame[:,:,2]=255
+        result=p.process(frame)
+        self.assertEqual(sizes,[4,4,1])
+        self.assertEqual(len(result),9)
+        np.testing.assert_allclose([item['detector_score'] for item in result],scores.numpy())
 
 if __name__=='__main__':unittest.main()
