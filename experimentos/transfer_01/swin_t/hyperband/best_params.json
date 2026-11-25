@@ -1,0 +1,29 @@
+{
+  "study_name": "coffee-head-swin_t-seed-42",
+  "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\hyperband\\study.sqlite3",
+  "best_trial": 1,
+  "best_params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "best_validation_macro_f1": 0.721460694857633,
+  "best_epoch": 9,
+  "training_seed": 43,
+  "data_signature": "76ee4d23b04f9652a94a755a62a106a983b10dac10c0b7ab9e074975a157b7ef",
+  "requested_trials": 12,
+  "completed_trials": 2,
+  "pruned_trials": 10,
+  "selection_split": "valid",
+  "settings": {
+    "seed": 42,
+    "max_epochs": 12,
+    "sampler": "RandomSampler",
+    "pruner": "HyperbandPruner",
+    "min_resource": 2,
+    "reduction_factor": 3
+  }
+}

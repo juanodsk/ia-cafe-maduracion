@@ -1,0 +1,339 @@
+{
+  "model_name": "efficientnet_b0",
+  "training_strategy": "frozen_backbone_transfer_learning",
+  "seed": 42,
+  "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\checkpoint.pt",
+  "model_state_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\checkpoint.pt",
+  "feature_dim": 1280,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "best_params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "best_epoch": 3,
+  "training_seed": 43,
+  "validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9038311180609852,
+    "balanced_accuracy": 0.7432734416519068,
+    "macro_f1": 0.7279632612655808,
+    "weighted_f1": 0.9075588897948541,
+    "macro_precision": 0.7207293373895737,
+    "macro_recall": 0.7432734416519068,
+    "confusion_matrix": [
+      [
+        163,
+        15,
+        1,
+        7,
+        31
+      ],
+      [
+        13,
+        69,
+        30,
+        10,
+        0
+      ],
+      [
+        0,
+        56,
+        463,
+        51,
+        1
+      ],
+      [
+        5,
+        24,
+        83,
+        230,
+        26
+      ],
+      [
+        6,
+        8,
+        20,
+        105,
+        3699
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8716577540106952,
+        "recall": 0.7511520737327189,
+        "f1": 0.806930693069307,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.4011627906976744,
+        "recall": 0.5655737704918032,
+        "f1": 0.46938775510204084,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7755443886097152,
+        "recall": 0.8108581436077058,
+        "f1": 0.7928082191780822,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.5707196029776674,
+        "recall": 0.625,
+        "f1": 0.5966277561608301,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.984562150652116,
+        "recall": 0.9637832204273059,
+        "f1": 0.9740618828176432,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "efficientnet_b0",
+    "metadata": {
+      "strategy": "frozen_backbone_learned_head",
+      "checkpoint_selection": "valid_macro_f1",
+      "best_epoch": 3
+    }
+  },
+  "cv_summary": {
+    "method": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "seed": 42,
+    "split": "train",
+    "fixed_epochs": 3,
+    "fixed_params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "train_samples": 19068,
+        "validation_samples": 4810,
+        "train_groups": 496,
+        "validation_groups": 124,
+        "epochs": 3,
+        "macro_f1": 0.722946487126621,
+        "accuracy": 0.8860706860706861,
+        "balanced_accuracy": 0.7296206448441568,
+        "weighted_f1": 0.8877268355336791
+      },
+      {
+        "fold": 2,
+        "train_samples": 19506,
+        "validation_samples": 4372,
+        "train_groups": 492,
+        "validation_groups": 128,
+        "epochs": 3,
+        "macro_f1": 0.7322891228249109,
+        "accuracy": 0.9103385178408051,
+        "balanced_accuracy": 0.7501857047745644,
+        "weighted_f1": 0.9147962426646994
+      },
+      {
+        "fold": 3,
+        "train_samples": 19232,
+        "validation_samples": 4646,
+        "train_groups": 498,
+        "validation_groups": 122,
+        "epochs": 3,
+        "macro_f1": 0.7047045923444581,
+        "accuracy": 0.8928110202324581,
+        "balanced_accuracy": 0.7196712532090161,
+        "weighted_f1": 0.8982660696872692
+      },
+      {
+        "fold": 4,
+        "train_samples": 19598,
+        "validation_samples": 4280,
+        "train_groups": 500,
+        "validation_groups": 120,
+        "epochs": 3,
+        "macro_f1": 0.7715428901550464,
+        "accuracy": 0.930373831775701,
+        "balanced_accuracy": 0.7823204622949442,
+        "weighted_f1": 0.9322710791848109
+      },
+      {
+        "fold": 5,
+        "train_samples": 18108,
+        "validation_samples": 5770,
+        "train_groups": 494,
+        "validation_groups": 126,
+        "epochs": 3,
+        "macro_f1": 0.7240527141802995,
+        "accuracy": 0.9228769497400346,
+        "balanced_accuracy": 0.7266738130212532,
+        "weighted_f1": 0.9230437777693918
+      }
+    ],
+    "macro_f1_mean": 0.7311071613262673,
+    "macro_f1_std": 0.024748245774529404,
+    "oof_metrics": {
+      "num_samples": 23878,
+      "class_labels": [
+        "dry",
+        "overripe",
+        "ripe",
+        "semi_ripe",
+        "unripe"
+      ],
+      "accuracy": 0.9086606918502387,
+      "balanced_accuracy": 0.742056889012216,
+      "macro_f1": 0.7320697952245355,
+      "weighted_f1": 0.9112760560301689,
+      "macro_precision": 0.7253360814389399,
+      "macro_recall": 0.742056889012216,
+      "confusion_matrix": [
+        [
+          877,
+          44,
+          7,
+          58,
+          29
+        ],
+        [
+          47,
+          241,
+          217,
+          54,
+          11
+        ],
+        [
+          10,
+          209,
+          2001,
+          424,
+          22
+        ],
+        [
+          28,
+          38,
+          302,
+          1207,
+          142
+        ],
+        [
+          50,
+          18,
+          69,
+          402,
+          17371
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "dry",
+          "precision": 0.866600790513834,
+          "recall": 0.864039408866995,
+          "f1": 0.8653182042427232,
+          "support": 1015
+        },
+        {
+          "label": "overripe",
+          "precision": 0.4381818181818182,
+          "recall": 0.42280701754385963,
+          "f1": 0.4303571428571429,
+          "support": 570
+        },
+        {
+          "label": "ripe",
+          "precision": 0.7708012326656395,
+          "recall": 0.7505626406601651,
+          "f1": 0.7605473204104903,
+          "support": 2666
+        },
+        {
+          "label": "semi_ripe",
+          "precision": 0.5627039627039627,
+          "recall": 0.7029702970297029,
+          "f1": 0.625064733298809,
+          "support": 1717
+        },
+        {
+          "label": "unripe",
+          "precision": 0.9883926031294452,
+          "recall": 0.9699050809603573,
+          "f1": 0.9790615753135128,
+          "support": 17910
+        }
+      ]
+    },
+    "cv_checkpoint_paths": [
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_1\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_2\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_3\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_4\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_5\\checkpoint.pt"
+    ],
+    "normalization": "fit separately on each fold training subset",
+    "interpretation": "CV conditional on hyperparameters and epoch budget selected on the separate fixed validation split; not nested CV."
+  },
+  "cv_checkpoint_paths": [
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_1\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_2\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_3\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_4\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\cross_validation\\fold_5\\checkpoint.pt"
+  ],
+  "hyperband": {
+    "study_name": "coffee-head-efficientnet_b0-seed-42",
+    "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\hyperband\\study.sqlite3",
+    "best_trial": 1,
+    "best_params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "best_validation_macro_f1": 0.7279632612655808,
+    "best_epoch": 3,
+    "training_seed": 43,
+    "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4",
+    "requested_trials": 12,
+    "completed_trials": 3,
+    "pruned_trials": 9,
+    "selection_split": "valid",
+    "settings": {
+      "seed": 42,
+      "max_epochs": 12,
+      "sampler": "RandomSampler",
+      "pruner": "HyperbandPruner",
+      "min_resource": 2,
+      "reduction_factor": 3
+    }
+  },
+  "training_crops": 23878,
+  "validation_crops": 5116,
+  "test_accessed": false
+}

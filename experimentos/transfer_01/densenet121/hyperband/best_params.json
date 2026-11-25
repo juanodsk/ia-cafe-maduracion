@@ -1,0 +1,29 @@
+{
+  "study_name": "coffee-head-densenet121-seed-42",
+  "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\densenet121\\hyperband\\study.sqlite3",
+  "best_trial": 0,
+  "best_params": {
+    "lr": 0.0008468008575248334,
+    "batch_size": 128,
+    "weight_decay": 0.0002481040974867811,
+    "dropout": 0.0,
+    "hidden_dim": 256,
+    "class_weight_power": 1.0
+  },
+  "best_validation_macro_f1": 0.7227195931672231,
+  "best_epoch": 7,
+  "training_seed": 42,
+  "data_signature": "6d95a725e5590778ffff03426e1ddf0de041946260997f8dcbf424299b2a37b0",
+  "requested_trials": 12,
+  "completed_trials": 3,
+  "pruned_trials": 9,
+  "selection_split": "valid",
+  "settings": {
+    "seed": 42,
+    "max_epochs": 12,
+    "sampler": "RandomSampler",
+    "pruner": "HyperbandPruner",
+    "min_resource": 2,
+    "reduction_factor": 3
+  }
+}

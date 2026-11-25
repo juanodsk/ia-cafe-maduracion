@@ -1,0 +1,13 @@
+{
+  "stage": "training",
+  "completed_epochs": 2,
+  "total_epochs": 5,
+  "sampled_class_counts_last_epoch": {
+    "dry": 1012,
+    "overripe": 960,
+    "ripe": 1028,
+    "semi_ripe": 1067,
+    "unripe": 1053
+  },
+  "test_used": false
+}

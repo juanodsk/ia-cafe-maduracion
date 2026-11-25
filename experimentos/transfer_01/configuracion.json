@@ -1,0 +1,29 @@
+{
+  "phase": "frozen_backbone_transfer_learning",
+  "seed": 42,
+  "models": [
+    "resnet50",
+    "efficientnet_b0",
+    "densenet121",
+    "vit_b_16",
+    "swin_t"
+  ],
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "dataset_manifest_sha256": "f99fcf50f70c45aad9eeffae1c857ad653af4bf64e017e1d5352220782ccb651",
+  "annotation_manifest_sha256": "38392b94c64150c39138d2a142c06ca69c60fc8337a780fe56ba8a1d5269b2b9",
+  "n_trials": 12,
+  "max_epochs": 12,
+  "cv_folds": 5,
+  "selection_metric": "validation_macro_f1",
+  "test_reserved": true,
+  "torch": "2.9.1+cu128",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

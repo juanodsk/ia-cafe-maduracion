@@ -1,0 +1,133 @@
+{
+  "method": "DistributedDataParallel",
+  "config": {
+    "method": "DistributedDataParallel",
+    "backend": "gloo",
+    "device": "cpu",
+    "torch_version": "2.7.1+cpu",
+    "world_size": 2,
+    "epochs": 2,
+    "seed": 43,
+    "params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+  },
+  "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\checkpoint.pt",
+  "validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.8903440187646599,
+    "balanced_accuracy": 0.7190245590454961,
+    "macro_f1": 0.7029109763187471,
+    "weighted_f1": 0.8961089042479209,
+    "macro_precision": 0.6931381904812606,
+    "macro_recall": 0.7190245590454961,
+    "confusion_matrix": [
+      [
+        166,
+        10,
+        3,
+        9,
+        29
+      ],
+      [
+        15,
+        52,
+        44,
+        11,
+        0
+      ],
+      [
+        0,
+        42,
+        459,
+        69,
+        1
+      ],
+      [
+        5,
+        23,
+        74,
+        240,
+        26
+      ],
+      [
+        8,
+        14,
+        26,
+        152,
+        3638
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8556701030927835,
+        "recall": 0.7649769585253456,
+        "f1": 0.8077858880778589,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.36879432624113473,
+        "recall": 0.4262295081967213,
+        "f1": 0.39543726235741444,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7574257425742574,
+        "recall": 0.8038528896672504,
+        "f1": 0.7799490229396772,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.498960498960499,
+        "recall": 0.6521739130434783,
+        "f1": 0.5653710247349824,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.9848402815376286,
+        "recall": 0.9478895257946848,
+        "f1": 0.9660116834838024,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "DDP_CPU_Gloo",
+    "metadata": {
+      "world_size": 2,
+      "epochs": 2,
+      "test_used": false
+    }
+  },
+  "rank_model_state_sha256": [
+    "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba",
+    "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba"
+  ],
+  "rank_states_identical": true,
+  "effective_global_batch_size": 256,
+  "sampler_padding_rows_per_epoch": 0,
+  "test_accessed": false,
+  "elapsed_seconds": 3.8439999999827705,
+  "limitations": [
+    "Two real CPU processes run on the same machine; this is not a multi-GPU or multi-machine speed benchmark.",
+    "Only the classifier head is updated; the pretrained backbone is frozen.",
+    "The fixed two-epoch pilot budget is descriptive and differs from tuned baseline training."
+  ]
+}

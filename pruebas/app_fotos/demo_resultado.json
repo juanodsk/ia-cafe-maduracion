@@ -1,0 +1,156 @@
+{
+  "image": {
+    "width": 640,
+    "height": 640
+  },
+  "detections": [
+    {
+      "bbox": [
+        124,
+        104,
+        304,
+        291
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9830684065818787,
+      "detector_score": 0.9513891935348511,
+      "id": 1,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        302,
+        81,
+        492,
+        286
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9950001239776611,
+      "detector_score": 0.9447087049484253,
+      "id": 2,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        27,
+        0,
+        216,
+        127
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9862079620361328,
+      "detector_score": 0.9373522400856018,
+      "id": 3,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        425,
+        33,
+        594,
+        130
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9632189273834229,
+      "detector_score": 0.9025788307189941,
+      "id": 4,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        410,
+        479,
+        573,
+        629
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9931229948997498,
+      "detector_score": 0.893589198589325,
+      "id": 5,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    },
+    {
+      "bbox": [
+        177,
+        566,
+        315,
+        640
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9949461817741394,
+      "detector_score": 0.8401190638542175,
+      "id": 6,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    },
+    {
+      "bbox": [
+        152,
+        473,
+        280,
+        603
+      ],
+      "class": "unripe",
+      "candidate_class": "unripe",
+      "score": 0.9625407457351685,
+      "detector_score": 0.8064638376235962,
+      "id": 7,
+      "label": "Verde",
+      "candidate_label": "Verde"
+    },
+    {
+      "bbox": [
+        228,
+        436,
+        316,
+        511
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9589484930038452,
+      "detector_score": 0.6814937591552734,
+      "id": 8,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        386,
+        600,
+        473,
+        640
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9265291690826416,
+      "detector_score": 0.5869136452674866,
+      "id": 9,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    }
+  ],
+  "counts": {
+    "ripe": 5,
+    "semi_ripe": 3,
+    "unripe": 1
+  },
+  "total": 9,
+  "model": "efficientnet_b0",
+  "model_label": "EfficientNet B0 · ajuste fino",
+  "device": "GPU",
+  "processing_ms": 473,
+  "maturity_threshold": 0.55,
+  "score_note": "La puntuación del modelo no es una certeza calibrada ni la precisión del sistema. Por debajo del 55 % se muestra Incierto.",
+  "source": "Foto de validación: demostración funcional, no prueba independiente."
+}

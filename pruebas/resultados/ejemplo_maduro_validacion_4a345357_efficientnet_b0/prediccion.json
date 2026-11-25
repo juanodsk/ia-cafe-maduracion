@@ -1,0 +1,22 @@
+{
+  "model": "efficientnet_b0",
+  "class": "ripe",
+  "label": "Maduro",
+  "score": 0.958895742893219,
+  "probabilities": {
+    "dry": 3.260530866100453e-05,
+    "overripe": 0.008088083006441593,
+    "ripe": 0.958895742893219,
+    "semi_ripe": 0.02096864953637123,
+    "unripe": 0.01201485376805067
+  },
+  "checkpoints": [
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\finetune_01\\efficientnet_b0\\checkpoint.pt"
+  ],
+  "note": "Softmax scores are not calibrated certainty. Classification of a fruit crop, not automatic detection.",
+  "image": "C:\\Users\\juanp\\Desktop\\juan-castro\\pruebas\\ejemplo_maduro_validacion.png",
+  "bbox": null,
+  "device": "cuda",
+  "expected_class": "ripe",
+  "correct": true
+}

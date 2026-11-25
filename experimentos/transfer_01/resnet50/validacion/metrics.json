@@ -1,0 +1,122 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.9014855355746677,
+  "balanced_accuracy": 0.6904424719632017,
+  "macro_f1": 0.7006233885102268,
+  "weighted_f1": 0.9007766568825969,
+  "macro_precision": 0.7185582409153872,
+  "macro_recall": 0.6904424719632017,
+  "confusion_matrix": [
+    [
+      168,
+      6,
+      4,
+      1,
+      38
+    ],
+    [
+      10,
+      40,
+      56,
+      16,
+      0
+    ],
+    [
+      2,
+      28,
+      431,
+      102,
+      8
+    ],
+    [
+      8,
+      5,
+      82,
+      228,
+      45
+    ],
+    [
+      14,
+      2,
+      19,
+      58,
+      3745
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.8316831683168316,
+      "recall": 0.7741935483870968,
+      "f1": 0.801909307875895,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.49382716049382713,
+      "recall": 0.32786885245901637,
+      "f1": 0.39408866995073893,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.7280405405405406,
+      "recall": 0.7548161120840631,
+      "f1": 0.7411865864144453,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.562962962962963,
+      "recall": 0.6195652173913043,
+      "f1": 0.5899094437257438,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9762773722627737,
+      "recall": 0.9757686294945284,
+      "f1": 0.9760229345843107,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "resnet50",
+  "metadata": {
+    "model_spec": {
+      "name": "resnet50",
+      "family": "cnn",
+      "weights": "ResNet50_Weights.IMAGENET1K_V2",
+      "weights_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+      "imagenet_parameters_before_head_replacement": 25557032,
+      "checkpoint_size_mb": 97.79,
+      "feature_dim": 2048,
+      "input_size": [
+        224
+      ],
+      "resize_size": [
+        232
+      ],
+      "interpolation": "bilinear",
+      "normalization_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "normalization_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html"
+    },
+    "training_scope": "classifier_head_only"
+  }
+}

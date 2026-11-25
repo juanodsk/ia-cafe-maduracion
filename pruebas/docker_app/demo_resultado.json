@@ -1,0 +1,223 @@
+{
+  "image": {
+    "width": 640,
+    "height": 640
+  },
+  "detections": [
+    {
+      "bbox": [
+        124,
+        104,
+        304,
+        291
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9831389784812927,
+      "detector_score": 0.9513623714447021,
+      "id": 1,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        302,
+        81,
+        492,
+        286
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9951025247573853,
+      "detector_score": 0.9447005391120911,
+      "id": 2,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        27,
+        0,
+        216,
+        127
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9860306978225708,
+      "detector_score": 0.9374237656593323,
+      "id": 3,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        425,
+        33,
+        594,
+        130
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9633045196533203,
+      "detector_score": 0.9026513695716858,
+      "id": 4,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        410,
+        479,
+        573,
+        629
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9931994080543518,
+      "detector_score": 0.8936622142791748,
+      "id": 5,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    },
+    {
+      "bbox": [
+        177,
+        566,
+        315,
+        640
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9948710203170776,
+      "detector_score": 0.8397990465164185,
+      "id": 6,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    },
+    {
+      "bbox": [
+        152,
+        473,
+        280,
+        603
+      ],
+      "class": "unripe",
+      "candidate_class": "unripe",
+      "score": 0.9629445672035217,
+      "detector_score": 0.8063843846321106,
+      "id": 7,
+      "label": "Verde",
+      "candidate_label": "Verde"
+    },
+    {
+      "bbox": [
+        228,
+        436,
+        316,
+        511
+      ],
+      "class": "ripe",
+      "candidate_class": "ripe",
+      "score": 0.9582282304763794,
+      "detector_score": 0.6812384724617004,
+      "id": 8,
+      "label": "Maduro",
+      "candidate_label": "Maduro"
+    },
+    {
+      "bbox": [
+        386,
+        600,
+        473,
+        640
+      ],
+      "class": "semi_ripe",
+      "candidate_class": "semi_ripe",
+      "score": 0.9261592626571655,
+      "detector_score": 0.5867013335227966,
+      "id": 9,
+      "label": "Pintón",
+      "candidate_label": "Pintón"
+    }
+  ],
+  "counts": {
+    "ripe": 5,
+    "semi_ripe": 3,
+    "unripe": 1
+  },
+  "total": 9,
+  "model": "efficientnet_b0",
+  "model_label": "EfficientNet B0 · ajuste fino",
+  "device": "CPU",
+  "processing_ms": 4226,
+  "maturity_threshold": 0.55,
+  "score_note": "La puntuación del modelo no es una certeza calibrada ni la precisión del sistema. Por debajo del 55 % se muestra Incierto.",
+  "source": "Foto de validación: demostración funcional, no prueba independiente.",
+  "verification": {
+    "deployment": "server",
+    "models": [
+      {
+        "model": "efficientnet_b0",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 3,
+          "unripe": 1
+        },
+        "processing_ms": 4226
+      },
+      {
+        "model": "resnet50",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 2,
+          "unripe": 2
+        },
+        "processing_ms": 3875
+      },
+      {
+        "model": "densenet121",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 3,
+          "unripe": 1
+        },
+        "processing_ms": 4022
+      },
+      {
+        "model": "vit_b_16",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 2,
+          "unripe": 1,
+          "unknown": 1
+        },
+        "processing_ms": 7418
+      },
+      {
+        "model": "swin_t",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 2,
+          "unripe": 2
+        },
+        "processing_ms": 5279
+      },
+      {
+        "model": "ensemble",
+        "total": 9,
+        "counts": {
+          "ripe": 5,
+          "semi_ripe": 2,
+          "unripe": 1,
+          "unknown": 1
+        },
+        "processing_ms": 12692
+      }
+    ]
+  }
+}

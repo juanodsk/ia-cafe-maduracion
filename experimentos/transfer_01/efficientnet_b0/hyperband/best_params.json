@@ -1,0 +1,29 @@
+{
+  "study_name": "coffee-head-efficientnet_b0-seed-42",
+  "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\hyperband\\study.sqlite3",
+  "best_trial": 1,
+  "best_params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "best_validation_macro_f1": 0.7279632612655808,
+  "best_epoch": 3,
+  "training_seed": 43,
+  "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4",
+  "requested_trials": 12,
+  "completed_trials": 3,
+  "pruned_trials": 9,
+  "selection_split": "valid",
+  "settings": {
+    "seed": 42,
+    "max_epochs": 12,
+    "sampler": "RandomSampler",
+    "pruner": "HyperbandPruner",
+    "min_resource": 2,
+    "reduction_factor": 3
+  }
+}

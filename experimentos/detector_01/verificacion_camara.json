@@ -1,0 +1,24 @@
+{
+  "status": "OK",
+  "dataset": {
+    "train": {
+      "images": 1651,
+      "source_annotations": 23878,
+      "unique_localization_boxes": 23641,
+      "duplicate_localization_boxes_removed": 237
+    },
+    "valid": {
+      "images": 354,
+      "source_annotations": 5116,
+      "unique_localization_boxes": 5007,
+      "duplicate_localization_boxes_removed": 109
+    }
+  },
+  "image_demo_detected_fruits": 9,
+  "demo_video_output_frames": 5,
+  "camera_0_capture_verified": true,
+  "camera_physical_positive_coffee_not_verified": true,
+  "test_used": false,
+  "unit_tests_passed": 4,
+  "best_detector_sha256": "a1372ea5dbde0599d74bd07b0f0336000d821589c5fe954567496b3f7d17543f"
+}

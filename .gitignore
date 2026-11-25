@@ -1,0 +1,47 @@
+.venv/
+.venv_ddp/
+/.cache/*
+!/.cache/torch/
+/.cache/torch/*
+!/.cache/torch/hub/
+/.cache/torch/hub/*
+!/.cache/torch/hub/checkpoints/
+/.cache/torch/hub/checkpoints/*
+!/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth
+!/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth
+!/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth
+__pycache__/
+*.pyc
+.pytest_cache/
+experimentos/*/features/
+experimentos/*/checkpoints/
+
+Ultralytics/
+
+web/node_modules/
+web/dist/
+.env
+dist_deploy/
+
+# Raw/prepared photos stay on the training machine. Keep COCO and CSV metadata.
+/imagenes/
+/dataset_deteccion/
+/dataset_preparado/**/*.jpg
+/dataset_preparado/**/*.jpeg
+/dataset_preparado/**/*.png
+/dataset_preparado/**/*.webp
+
+# Regenerable numeric embeddings and local study databases.
+experimentos/**/*.npy
+experimentos/**/*.sqlite3
+experimentos/**/*.sqlite3-*
+
+# Local secrets and editor files.
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

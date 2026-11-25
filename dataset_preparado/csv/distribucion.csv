@@ -1,0 +1,4 @@
+split,images,image_percentage,target_percentage,groups,annotations
+train,1651,69.987283,70,620,23878
+valid,354,15.006359,15,125,5116
+test,354,15.006359,15,139,5117

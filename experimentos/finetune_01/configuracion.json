@@ -1,0 +1,13 @@
+{
+  "dataset": "C:\\Users\\juanp\\Desktop\\juan-castro\\dataset_preparado",
+  "baseline": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01",
+  "output": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\finetune_01",
+  "epochs": 6,
+  "patience": 2,
+  "batch_size": 32,
+  "workers": 4,
+  "backbone_lr": 1e-05,
+  "head_lr": 3e-05,
+  "device": "cuda",
+  "dataset_manifest_sha256": "f99fcf50f70c45aad9eeffae1c857ad653af4bf64e017e1d5352220782ccb651"
+}

@@ -1,0 +1,391 @@
+{
+  "model_name": "vit_b_16",
+  "training_strategy": "frozen_backbone_transfer_learning",
+  "seed": 42,
+  "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\checkpoint.pt",
+  "model_state_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\checkpoint.pt",
+  "feature_dim": 768,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "best_params": {
+    "lr": 0.00020058733363444964,
+    "batch_size": 128,
+    "weight_decay": 0.004337920697490943,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "best_epoch": 11,
+  "training_seed": 46,
+  "validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9077404222048475,
+    "balanced_accuracy": 0.7157760386222854,
+    "macro_f1": 0.7181666533824407,
+    "weighted_f1": 0.9082656591807635,
+    "macro_precision": 0.7230328504410091,
+    "macro_recall": 0.7157760386222854,
+    "confusion_matrix": [
+      [
+        164,
+        10,
+        1,
+        7,
+        35
+      ],
+      [
+        19,
+        47,
+        39,
+        17,
+        0
+      ],
+      [
+        2,
+        30,
+        465,
+        68,
+        6
+      ],
+      [
+        4,
+        15,
+        75,
+        240,
+        34
+      ],
+      [
+        12,
+        1,
+        25,
+        72,
+        3728
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8159203980099502,
+        "recall": 0.7557603686635944,
+        "f1": 0.784688995215311,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.4563106796116505,
+        "recall": 0.38524590163934425,
+        "f1": 0.4177777777777778,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.768595041322314,
+        "recall": 0.8143607705779334,
+        "f1": 0.7908163265306123,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.594059405940594,
+        "recall": 0.6521739130434783,
+        "f1": 0.6217616580310881,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.9802787273205364,
+        "recall": 0.9713392391870767,
+        "f1": 0.9757885093574139,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "vit_b_16",
+    "metadata": {
+      "model_spec": {
+        "name": "vit_b_16",
+        "family": "transformer",
+        "weights": "ViT_B_16_Weights.IMAGENET1K_V1",
+        "weights_url": "https://download.pytorch.org/models/vit_b_16-c867db91.pth",
+        "imagenet_parameters_before_head_replacement": 86567656,
+        "checkpoint_size_mb": 330.285,
+        "feature_dim": 768,
+        "input_size": [
+          224
+        ],
+        "resize_size": [
+          256
+        ],
+        "interpolation": "bilinear",
+        "normalization_mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "normalization_std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.vit_b_16.html"
+      },
+      "training_scope": "classifier_head_only"
+    }
+  },
+  "cv_summary": {
+    "method": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "seed": 42,
+    "split": "train",
+    "fixed_epochs": 11,
+    "fixed_params": {
+      "lr": 0.00020058733363444964,
+      "batch_size": 128,
+      "weight_decay": 0.004337920697490943,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "train_samples": 19068,
+        "validation_samples": 4810,
+        "train_groups": 496,
+        "validation_groups": 124,
+        "epochs": 11,
+        "macro_f1": 0.7180988586729571,
+        "accuracy": 0.8923076923076924,
+        "balanced_accuracy": 0.7242075693578864,
+        "weighted_f1": 0.8932814470874495
+      },
+      {
+        "fold": 2,
+        "train_samples": 19506,
+        "validation_samples": 4372,
+        "train_groups": 492,
+        "validation_groups": 128,
+        "epochs": 11,
+        "macro_f1": 0.6962179360369134,
+        "accuracy": 0.9197163769441903,
+        "balanced_accuracy": 0.7087635733870974,
+        "weighted_f1": 0.9199133561994952
+      },
+      {
+        "fold": 3,
+        "train_samples": 19232,
+        "validation_samples": 4646,
+        "train_groups": 498,
+        "validation_groups": 122,
+        "epochs": 11,
+        "macro_f1": 0.7299280292220953,
+        "accuracy": 0.907447266465777,
+        "balanced_accuracy": 0.738152877816062,
+        "weighted_f1": 0.9093410260862631
+      },
+      {
+        "fold": 4,
+        "train_samples": 19598,
+        "validation_samples": 4280,
+        "train_groups": 500,
+        "validation_groups": 120,
+        "epochs": 11,
+        "macro_f1": 0.7761176521499628,
+        "accuracy": 0.9310747663551402,
+        "balanced_accuracy": 0.7904993578082122,
+        "weighted_f1": 0.9317388566847858
+      },
+      {
+        "fold": 5,
+        "train_samples": 18108,
+        "validation_samples": 5770,
+        "train_groups": 494,
+        "validation_groups": 126,
+        "epochs": 11,
+        "macro_f1": 0.7378417831494156,
+        "accuracy": 0.9246100519930676,
+        "balanced_accuracy": 0.7344247055620807,
+        "weighted_f1": 0.924115245662393
+      }
+    ],
+    "macro_f1_mean": 0.7316408518462688,
+    "macro_f1_std": 0.029401273863412784,
+    "oof_metrics": {
+      "num_samples": 23878,
+      "class_labels": [
+        "dry",
+        "overripe",
+        "ripe",
+        "semi_ripe",
+        "unripe"
+      ],
+      "accuracy": 0.915026384119273,
+      "balanced_accuracy": 0.7428555231647408,
+      "macro_f1": 0.7377746277624849,
+      "weighted_f1": 0.9157752680312843,
+      "macro_precision": 0.7333233512474189,
+      "macro_recall": 0.7428555231647408,
+      "confusion_matrix": [
+        [
+          879,
+          35,
+          15,
+          43,
+          43
+        ],
+        [
+          58,
+          244,
+          216,
+          43,
+          9
+        ],
+        [
+          16,
+          202,
+          2074,
+          353,
+          21
+        ],
+        [
+          37,
+          43,
+          329,
+          1141,
+          167
+        ],
+        [
+          61,
+          11,
+          62,
+          265,
+          17511
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "dry",
+          "precision": 0.8363463368220743,
+          "recall": 0.8660098522167488,
+          "f1": 0.850919651500484,
+          "support": 1015
+        },
+        {
+          "label": "overripe",
+          "precision": 0.45607476635514016,
+          "recall": 0.4280701754385965,
+          "f1": 0.4416289592760181,
+          "support": 570
+        },
+        {
+          "label": "ripe",
+          "precision": 0.7692878338278932,
+          "recall": 0.7779444861215303,
+          "f1": 0.773591943304737,
+          "support": 2666
+        },
+        {
+          "label": "semi_ripe",
+          "precision": 0.6184281842818428,
+          "recall": 0.6645311589982528,
+          "f1": 0.6406513194834362,
+          "support": 1717
+        },
+        {
+          "label": "unripe",
+          "precision": 0.9864796349501437,
+          "recall": 0.9777219430485762,
+          "f1": 0.9820812652477496,
+          "support": 17910
+        }
+      ]
+    },
+    "cv_checkpoint_paths": [
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_1\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_2\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_3\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_4\\checkpoint.pt",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_5\\checkpoint.pt"
+    ],
+    "normalization": "fit separately on each fold training subset",
+    "interpretation": "CV conditional on hyperparameters and epoch budget selected on the separate fixed validation split; not nested CV."
+  },
+  "cv_checkpoint_paths": [
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_1\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_2\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_3\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_4\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\cross_validation\\fold_5\\checkpoint.pt"
+  ],
+  "hyperband": {
+    "study_name": "coffee-head-vit_b_16-seed-42",
+    "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\hyperband\\study.sqlite3",
+    "best_trial": 4,
+    "best_params": {
+      "lr": 0.00020058733363444964,
+      "batch_size": 128,
+      "weight_decay": 0.004337920697490943,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "best_validation_macro_f1": 0.7181666533824407,
+    "best_epoch": 11,
+    "training_seed": 46,
+    "data_signature": "00e51945c8b1b79500532eacbbf7a19e41adc3994c1e64d76239dbcdbca4fbc0",
+    "requested_trials": 12,
+    "completed_trials": 4,
+    "pruned_trials": 8,
+    "selection_split": "valid",
+    "settings": {
+      "seed": 42,
+      "max_epochs": 12,
+      "sampler": "RandomSampler",
+      "pruner": "HyperbandPruner",
+      "min_resource": 2,
+      "reduction_factor": 3
+    }
+  },
+  "training_crops": 23878,
+  "validation_crops": 5116,
+  "test_accessed": false,
+  "model_spec": {
+    "name": "vit_b_16",
+    "family": "transformer",
+    "weights": "ViT_B_16_Weights.IMAGENET1K_V1",
+    "weights_url": "https://download.pytorch.org/models/vit_b_16-c867db91.pth",
+    "imagenet_parameters_before_head_replacement": 86567656,
+    "checkpoint_size_mb": 330.285,
+    "feature_dim": 768,
+    "input_size": [
+      224
+    ],
+    "resize_size": [
+      256
+    ],
+    "interpolation": "bilinear",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.vit_b_16.html"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "stage": "complete",
+  "configuration": {
+    "architecture": "conditional_DCGAN_64",
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "epochs": 5,
+    "steps_per_epoch": 80,
+    "batch_size": 64,
+    "seed": 42,
+    "synthetic_per_minority_class": 256,
+    "latent_dim": 64,
+    "base_channels": 32,
+    "embedding_dim": 16,
+    "learning_rate": 0.0002,
+    "adam_betas": [
+      0.5,
+      0.999
+    ],
+    "real_range": [
+      -1,
+      1
+    ],
+    "training_records_sha256": "cdc370dc4ed51c42960b66074a5a1283fd1a36d2f48924a834840d74b2bcc95a",
+    "train_crops": 23878,
+    "train_class_counts": {
+      "unripe": 17910,
+      "ripe": 2666,
+      "semi_ripe": 1717,
+      "overripe": 570,
+      "dry": 1015
+    },
+    "sampled_images_per_epoch": 5120,
+    "train_sampler": "WeightedRandomSampler_inverse_class_frequency_with_replacement",
+    "workers": 2,
+    "device": "cuda",
+    "torch": "2.9.1+cu128",
+    "new_augmentation": "horizontal_flip_only; no colour changes",
+    "test_used": false,
+    "discriminator_generator_update_mode": "train_batchnorm_frozen_parameters",
+    "pilot": true
+  },
+  "generator_run_id": "0074b6cf5ce6d88d",
+  "completed_epochs": 5,
+  "total_steps": 400,
+  "training_seconds_this_invocation": 135.375,
+  "generator_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\generator.pt",
+  "discriminator_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\discriminator.pt",
+  "training_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\training_last.pt",
+  "history_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\history.csv",
+  "synthetic_manifest": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\synthetic_train.csv",
+  "synthetic_images": 1024,
+  "synthetic_class_counts": {
+    "dry": 256,
+    "overripe": 256,
+    "ripe": 256,
+    "semi_ripe": 256
+  },
+  "test_used": false,
+  "final_losses": {
+    "loss_d": 0.13455824553966522,
+    "loss_g": 5.89736270904541
+  },
+  "limitations": [
+    "Small conditional GAN pilot; generated images and requested labels require visual/expert review.",
+    "GAN losses are not image quality or classification accuracy metrics.",
+    "Synthetic images may only augment training; validation and test remain real and unchanged.",
+    "This generator saw all fixed training images. Do not use its synthetic images in held-out CV folds; train a fold-specific GAN for that.",
+    "Source v5 training crops include inherited shear/exposure augmentations."
+  ]
+}

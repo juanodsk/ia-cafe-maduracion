@@ -1,0 +1,191 @@
+{
+  "model": "swin_t",
+  "best_epoch": 0,
+  "epochs_run": 2,
+  "baseline_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9073494917904613,
+    "balanced_accuracy": 0.7156416621176136,
+    "macro_f1": 0.721460694857633,
+    "weighted_f1": 0.9078427683384931,
+    "macro_precision": 0.7334685416912075,
+    "macro_recall": 0.7156416621176136,
+    "confusion_matrix": [
+      [
+        160,
+        18,
+        4,
+        1,
+        34
+      ],
+      [
+        8,
+        46,
+        51,
+        17,
+        0
+      ],
+      [
+        0,
+        16,
+        472,
+        74,
+        9
+      ],
+      [
+        11,
+        12,
+        61,
+        246,
+        38
+      ],
+      [
+        13,
+        0,
+        22,
+        85,
+        3718
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8333333333333334,
+        "recall": 0.7373271889400922,
+        "f1": 0.78239608801956,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.5,
+        "recall": 0.3770491803278688,
+        "f1": 0.42990654205607476,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7737704918032787,
+        "recall": 0.8266199649737302,
+        "f1": 0.7993226079593565,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.5815602836879432,
+        "recall": 0.6684782608695652,
+        "f1": 0.6219974715549936,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.978678599631482,
+        "recall": 0.9687337154768109,
+        "f1": 0.9736807646981799,
+        "support": 3838
+      }
+    ]
+  },
+  "validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9073494917904613,
+    "balanced_accuracy": 0.7156416621176136,
+    "macro_f1": 0.721460694857633,
+    "weighted_f1": 0.9078427683384931,
+    "macro_precision": 0.7334685416912075,
+    "macro_recall": 0.7156416621176136,
+    "confusion_matrix": [
+      [
+        160,
+        18,
+        4,
+        1,
+        34
+      ],
+      [
+        8,
+        46,
+        51,
+        17,
+        0
+      ],
+      [
+        0,
+        16,
+        472,
+        74,
+        9
+      ],
+      [
+        11,
+        12,
+        61,
+        246,
+        38
+      ],
+      [
+        13,
+        0,
+        22,
+        85,
+        3718
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8333333333333334,
+        "recall": 0.7373271889400922,
+        "f1": 0.78239608801956,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.5,
+        "recall": 0.3770491803278688,
+        "f1": 0.42990654205607476,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7737704918032787,
+        "recall": 0.8266199649737302,
+        "f1": 0.7993226079593565,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.5815602836879432,
+        "recall": 0.6684782608695652,
+        "f1": 0.6219974715549936,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.978678599631482,
+        "recall": 0.9687337154768109,
+        "f1": 0.9736807646981799,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "swin_t_finetuned"
+  },
+  "macro_f1_change": 0.0,
+  "accuracy_change": 0.0,
+  "checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\finetune_01\\swin_t\\checkpoint.pt",
+  "test_used": false
+}

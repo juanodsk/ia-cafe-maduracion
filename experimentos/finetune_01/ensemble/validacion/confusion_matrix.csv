@@ -1,0 +1,6 @@
+true_label,dry,overripe,ripe,semi_ripe,unripe
+dry,172,10,3,0,32
+overripe,10,41,57,14,0
+ripe,0,12,508,51,0
+semi_ripe,6,7,67,253,35
+unripe,6,0,12,66,3754

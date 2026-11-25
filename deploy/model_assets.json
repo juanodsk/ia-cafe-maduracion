@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "experimentos/detector_01/weights/best.pt",
+      "bytes": 5467034,
+      "sha256": "a1372ea5dbde0599d74bd07b0f0336000d821589c5fe954567496b3f7d17543f"
+    },
+    {
+      "path": "experimentos/finetune_01/efficientnet_b0/checkpoint.pt",
+      "bytes": 17639677,
+      "sha256": "cf881ddd7ef19b3940ef22e219796d09e4f656e020980b66468d5eb4094034ff"
+    },
+    {
+      "path": "experimentos/finetune_01/swin_t/checkpoint.pt",
+      "bytes": 111166478,
+      "sha256": "280feee3633bb470d401c01957508d864200607d59e271d346046b4fdc44ed49"
+    },
+    {
+      "path": "experimentos/transfer_01/resnet50/checkpoint.pt",
+      "bytes": 2123897,
+      "sha256": "b64792db9b3b85f8f847683e26183177496604e9f3ebf15320f77dcd6cbffe68"
+    },
+    {
+      "path": "experimentos/transfer_01/densenet121/checkpoint.pt",
+      "bytes": 1067129,
+      "sha256": "61619c8236726429261a313123f024e090bebb6d57fa39a8da81ab103129973e"
+    },
+    {
+      "path": "experimentos/transfer_01/vit_b_16/checkpoint.pt",
+      "bytes": 802937,
+      "sha256": "ae181684b3afb9560442b8bfee80116cdebc80c472c197033af17e208372f67d"
+    },
+    {
+      "path": ".cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+      "bytes": 102540417,
+      "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+    },
+    {
+      "path": ".cache/torch/hub/checkpoints/densenet121-a639ec97.pth",
+      "bytes": 32342954,
+      "sha256": "a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395"
+    },
+    {
+      "path": ".cache/torch/hub/checkpoints/vit_b_16-c867db91.pth",
+      "bytes": 346328529,
+      "sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9"
+    }
+  ]
+}

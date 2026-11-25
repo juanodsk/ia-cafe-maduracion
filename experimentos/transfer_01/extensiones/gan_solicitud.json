@@ -1,0 +1,14 @@
+{
+  "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+  "phase": "gan",
+  "settings": {
+    "device": "cuda",
+    "epochs": 5,
+    "steps_per_epoch": 80,
+    "batch_size": 64,
+    "seed": 42,
+    "synthetic_per_class": 256,
+    "workers": 2,
+    "train_only": true
+  }
+}

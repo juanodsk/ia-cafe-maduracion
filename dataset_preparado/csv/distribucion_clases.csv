@@ -1,0 +1,16 @@
+split,label,annotations,percentage_of_all_annotations_for_class,images_containing_class
+train,dry,1015,70.048309,261
+train,overripe,570,69.938650,184
+train,ripe,2666,70.010504,462
+train,semi_ripe,1717,69.995923,374
+train,unripe,17910,69.999218,1413
+valid,dry,217,14.975845,54
+valid,overripe,122,14.969325,45
+valid,ripe,571,14.994748,120
+valid,semi_ripe,368,15.002038,98
+valid,unripe,3838,15.000391,319
+test,dry,217,14.975845,47
+test,overripe,123,15.092025,47
+test,ripe,571,14.994748,85
+test,semi_ripe,368,15.002038,82
+test,unripe,3838,15.000391,324

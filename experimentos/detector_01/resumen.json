@@ -1,0 +1,17 @@
+{
+  "stage": "complete",
+  "task": "coffee_fruit_localization",
+  "best_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\detector_01\\weights\\best.pt",
+  "metrics": {
+    "metrics/precision(B)": 0.9069120610021216,
+    "metrics/recall(B)": 0.932494507689235,
+    "metrics/mAP50(B)": 0.9501912724962006,
+    "metrics/mAP50-95(B)": 0.784400929036123,
+    "fitness": 0.784400929036123
+  },
+  "test_used": false,
+  "class_names": {
+    "0": "fruit"
+  },
+  "epochs_requested": 15
+}

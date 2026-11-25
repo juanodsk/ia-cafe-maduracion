@@ -1,0 +1,99 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.9050039093041439,
+  "balanced_accuracy": 0.7239266636894355,
+  "macro_f1": 0.7163226914313567,
+  "weighted_f1": 0.9077951740978808,
+  "macro_precision": 0.7120845321601157,
+  "macro_recall": 0.7239266636894355,
+  "confusion_matrix": [
+    [
+      162,
+      12,
+      5,
+      7,
+      31
+    ],
+    [
+      16,
+      54,
+      39,
+      13,
+      0
+    ],
+    [
+      0,
+      51,
+      465,
+      54,
+      1
+    ],
+    [
+      6,
+      26,
+      67,
+      239,
+      30
+    ],
+    [
+      8,
+      3,
+      21,
+      96,
+      3710
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.84375,
+      "recall": 0.7465437788018433,
+      "f1": 0.7921760391198044,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.3698630136986301,
+      "recall": 0.4426229508196721,
+      "f1": 0.40298507462686567,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.7788944723618091,
+      "recall": 0.8143607705779334,
+      "f1": 0.7962328767123288,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.5843520782396088,
+      "recall": 0.6494565217391305,
+      "f1": 0.6151866151866152,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9835630965005302,
+      "recall": 0.9666492965085982,
+      "f1": 0.9750328515111695,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "efficientnet_b0_gan_augmentation",
+  "metadata": {
+    "training_scope": "classifier_head_only",
+    "synthetic_use": "train_only",
+    "fixed_epochs": 3,
+    "training_seed": 43,
+    "validation_used_for_checkpoint_selection": false
+  }
+}

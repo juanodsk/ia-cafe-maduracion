@@ -1,0 +1,122 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.9077404222048475,
+  "balanced_accuracy": 0.7157760386222854,
+  "macro_f1": 0.7181666533824407,
+  "weighted_f1": 0.9082656591807635,
+  "macro_precision": 0.7230328504410091,
+  "macro_recall": 0.7157760386222854,
+  "confusion_matrix": [
+    [
+      164,
+      10,
+      1,
+      7,
+      35
+    ],
+    [
+      19,
+      47,
+      39,
+      17,
+      0
+    ],
+    [
+      2,
+      30,
+      465,
+      68,
+      6
+    ],
+    [
+      4,
+      15,
+      75,
+      240,
+      34
+    ],
+    [
+      12,
+      1,
+      25,
+      72,
+      3728
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.8159203980099502,
+      "recall": 0.7557603686635944,
+      "f1": 0.784688995215311,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.4563106796116505,
+      "recall": 0.38524590163934425,
+      "f1": 0.4177777777777778,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.768595041322314,
+      "recall": 0.8143607705779334,
+      "f1": 0.7908163265306123,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.594059405940594,
+      "recall": 0.6521739130434783,
+      "f1": 0.6217616580310881,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9802787273205364,
+      "recall": 0.9713392391870767,
+      "f1": 0.9757885093574139,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "vit_b_16",
+  "metadata": {
+    "model_spec": {
+      "name": "vit_b_16",
+      "family": "transformer",
+      "weights": "ViT_B_16_Weights.IMAGENET1K_V1",
+      "weights_url": "https://download.pytorch.org/models/vit_b_16-c867db91.pth",
+      "imagenet_parameters_before_head_replacement": 86567656,
+      "checkpoint_size_mb": 330.285,
+      "feature_dim": 768,
+      "input_size": [
+        224
+      ],
+      "resize_size": [
+        256
+      ],
+      "interpolation": "bilinear",
+      "normalization_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "normalization_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.vit_b_16.html"
+    },
+    "training_scope": "classifier_head_only"
+  }
+}

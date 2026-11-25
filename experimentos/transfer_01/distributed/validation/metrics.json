@@ -1,0 +1,97 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.8903440187646599,
+  "balanced_accuracy": 0.7190245590454961,
+  "macro_f1": 0.7029109763187471,
+  "weighted_f1": 0.8961089042479209,
+  "macro_precision": 0.6931381904812606,
+  "macro_recall": 0.7190245590454961,
+  "confusion_matrix": [
+    [
+      166,
+      10,
+      3,
+      9,
+      29
+    ],
+    [
+      15,
+      52,
+      44,
+      11,
+      0
+    ],
+    [
+      0,
+      42,
+      459,
+      69,
+      1
+    ],
+    [
+      5,
+      23,
+      74,
+      240,
+      26
+    ],
+    [
+      8,
+      14,
+      26,
+      152,
+      3638
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.8556701030927835,
+      "recall": 0.7649769585253456,
+      "f1": 0.8077858880778589,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.36879432624113473,
+      "recall": 0.4262295081967213,
+      "f1": 0.39543726235741444,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.7574257425742574,
+      "recall": 0.8038528896672504,
+      "f1": 0.7799490229396772,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.498960498960499,
+      "recall": 0.6521739130434783,
+      "f1": 0.5653710247349824,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9848402815376286,
+      "recall": 0.9478895257946848,
+      "f1": 0.9660116834838024,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "DDP_CPU_Gloo",
+  "metadata": {
+    "world_size": 2,
+    "epochs": 2,
+    "test_used": false
+  }
+}

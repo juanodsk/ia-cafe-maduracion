@@ -1,0 +1,37 @@
+{
+  "output_dir": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed",
+  "seed": 43,
+  "epochs": 2,
+  "params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "batch_size": 128,
+  "train_features": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\inputs\\train_features.npy",
+  "valid_features": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\inputs\\valid_features.npy",
+  "train_targets": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\inputs\\train_targets.npy",
+  "valid_targets": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\inputs\\valid_targets.npy",
+  "valid_records": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\inputs\\valid_records.json",
+  "public_config": {
+    "method": "DistributedDataParallel",
+    "backend": "gloo",
+    "device": "cpu",
+    "torch_version": "2.7.1+cpu",
+    "world_size": 2,
+    "epochs": 2,
+    "seed": 43,
+    "params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "review_date": "2026-11-25",
+  "grid": "gan/generated_grid.png",
+  "finding": "Las muestras presentan ruido y estructuras poco definidas; no permiten validar visualmente los estados de madurez solicitados.",
+  "status": "insufficient_visual_quality",
+  "use": "Solo ablacion experimental; no recomendar como aumento validado ni sustituir datos reales."
+}

@@ -1,0 +1,20 @@
+{
+  "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+  "phase": "federated",
+  "settings": {
+    "params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "n_clients": 3,
+    "rounds": 5,
+    "local_epochs": 2,
+    "seed": 43,
+    "device": "cpu",
+    "simulation": true
+  }
+}

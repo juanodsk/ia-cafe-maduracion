@@ -1,0 +1,45 @@
+{
+  "architecture": "conditional_DCGAN_64",
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "epochs": 5,
+  "steps_per_epoch": 80,
+  "batch_size": 64,
+  "seed": 42,
+  "synthetic_per_minority_class": 256,
+  "latent_dim": 64,
+  "base_channels": 32,
+  "embedding_dim": 16,
+  "learning_rate": 0.0002,
+  "adam_betas": [
+    0.5,
+    0.999
+  ],
+  "real_range": [
+    -1,
+    1
+  ],
+  "training_records_sha256": "cdc370dc4ed51c42960b66074a5a1283fd1a36d2f48924a834840d74b2bcc95a",
+  "train_crops": 23878,
+  "train_class_counts": {
+    "unripe": 17910,
+    "ripe": 2666,
+    "semi_ripe": 1717,
+    "overripe": 570,
+    "dry": 1015
+  },
+  "sampled_images_per_epoch": 5120,
+  "train_sampler": "WeightedRandomSampler_inverse_class_frequency_with_replacement",
+  "workers": 2,
+  "device": "cuda",
+  "torch": "2.9.1+cu128",
+  "new_augmentation": "horizontal_flip_only; no colour changes",
+  "test_used": false,
+  "discriminator_generator_update_mode": "train_batchnorm_frozen_parameters",
+  "pilot": true
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "algorithm": "grouped-multiclass-exact-image-counts-v1",
+  "seed": 42,
+  "search_trials": 256,
+  "equal_size_swap_attempts": 100000,
+  "source_directory": "imagenes",
+  "output_directory": "dataset_preparado",
+  "source_version": "5",
+  "source_annotation_files": [
+    {
+      "path": "train/_annotations.coco.json",
+      "sha256": "3d2503b5d02259a402f60f7db5a5246f76da32705168dbd5e803779074047d8f"
+    },
+    {
+      "path": "valid/_annotations.coco.json",
+      "sha256": "58d7fda15633b1c84142a3ba19993fabdaaa0d03089be2309b7e333bd0acda16"
+    },
+    {
+      "path": "test/_annotations.coco.json",
+      "sha256": "eb60d7c2662dc37e406b4b68d2d874f2d2058beabeb20fc049079feb061d621b"
+    }
+  ],
+  "requested_ratios": {
+    "train": 0.7,
+    "valid": 0.15,
+    "test": 0.15
+  },
+  "rounding": "largest_remainder_on_unique_image_files",
+  "original_images": 2360,
+  "retained_images": 2359,
+  "excluded_duplicate_files": 1,
+  "excluded_duplicate_annotations": 13,
+  "groups": 884,
+  "retained_annotations": 34111,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "split_counts": [
+    {
+      "split": "train",
+      "images": 1651,
+      "image_percentage": "69.987283",
+      "target_percentage": 70,
+      "groups": 620,
+      "annotations": 23878
+    },
+    {
+      "split": "valid",
+      "images": 354,
+      "image_percentage": "15.006359",
+      "target_percentage": 15,
+      "groups": 125,
+      "annotations": 5116
+    },
+    {
+      "split": "test",
+      "images": 354,
+      "image_percentage": "15.006359",
+      "target_percentage": 15,
+      "groups": 139,
+      "annotations": 5117
+    }
+  ],
+  "class_counts": [
+    {
+      "split": "train",
+      "label": "dry",
+      "annotations": 1015,
+      "percentage_of_all_annotations_for_class": "70.048309",
+      "images_containing_class": 261
+    },
+    {
+      "split": "train",
+      "label": "overripe",
+      "annotations": 570,
+      "percentage_of_all_annotations_for_class": "69.938650",
+      "images_containing_class": 184
+    },
+    {
+      "split": "train",
+      "label": "ripe",
+      "annotations": 2666,
+      "percentage_of_all_annotations_for_class": "70.010504",
+      "images_containing_class": 462
+    },
+    {
+      "split": "train",
+      "label": "semi_ripe",
+      "annotations": 1717,
+      "percentage_of_all_annotations_for_class": "69.995923",
+      "images_containing_class": 374
+    },
+    {
+      "split": "train",
+      "label": "unripe",
+      "annotations": 17910,
+      "percentage_of_all_annotations_for_class": "69.999218",
+      "images_containing_class": 1413
+    },
+    {
+      "split": "valid",
+      "label": "dry",
+      "annotations": 217,
+      "percentage_of_all_annotations_for_class": "14.975845",
+      "images_containing_class": 54
+    },
+    {
+      "split": "valid",
+      "label": "overripe",
+      "annotations": 122,
+      "percentage_of_all_annotations_for_class": "14.969325",
+      "images_containing_class": 45
+    },
+    {
+      "split": "valid",
+      "label": "ripe",
+      "annotations": 571,
+      "percentage_of_all_annotations_for_class": "14.994748",
+      "images_containing_class": 120
+    },
+    {
+      "split": "valid",
+      "label": "semi_ripe",
+      "annotations": 368,
+      "percentage_of_all_annotations_for_class": "15.002038",
+      "images_containing_class": 98
+    },
+    {
+      "split": "valid",
+      "label": "unripe",
+      "annotations": 3838,
+      "percentage_of_all_annotations_for_class": "15.000391",
+      "images_containing_class": 319
+    },
+    {
+      "split": "test",
+      "label": "dry",
+      "annotations": 217,
+      "percentage_of_all_annotations_for_class": "14.975845",
+      "images_containing_class": 47
+    },
+    {
+      "split": "test",
+      "label": "overripe",
+      "annotations": 123,
+      "percentage_of_all_annotations_for_class": "15.092025",
+      "images_containing_class": 47
+    },
+    {
+      "split": "test",
+      "label": "ripe",
+      "annotations": 571,
+      "percentage_of_all_annotations_for_class": "14.994748",
+      "images_containing_class": 85
+    },
+    {
+      "split": "test",
+      "label": "semi_ripe",
+      "annotations": 368,
+      "percentage_of_all_annotations_for_class": "15.002038",
+      "images_containing_class": 82
+    },
+    {
+      "split": "test",
+      "label": "unripe",
+      "annotations": 3838,
+      "percentage_of_all_annotations_for_class": "15.000391",
+      "images_containing_class": 324
+    }
+  ],
+  "group_rule": "same source stem or same YYYYMMDD_HHMMSS timestamp; union exact SHA256; keep whole groups in one split",
+  "duplicate_policy": "Prefer existing valid, then test, then train; retain one annotation set and audit excluded geometry.",
+  "class_balance_objective": 0.0000079827273809369,
+  "image_manifest_sha256": "f99fcf50f70c45aad9eeffae1c857ad653af4bf64e017e1d5352220782ccb651",
+  "limitations": [
+    "Source v5 already includes shear/exposure variants. This repartition keeps inherited variants grouped; it does not recover augmentation-free originals.",
+    "Do not apply additional random augmentation to validation or test. For an evaluation on original images only, re-export a dataset without augmentation.",
+    "Grouping controls source-name, timestamp-alias and exact-hash overlap. No farm, plant or physical-fruit IDs are available to guarantee independence across captures.",
+    "70/15/15 refers to unique exported image files, not independent captures or fruit crops. All future crops must inherit the parent image partition."
+  ]
+}

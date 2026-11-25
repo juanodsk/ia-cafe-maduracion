@@ -1,0 +1,166 @@
+{
+  "method": "FedAvg",
+  "config": {
+    "method": "FedAvg",
+    "simulation": true,
+    "n_clients": 3,
+    "rounds": 5,
+    "local_epochs": 2,
+    "seed": 43,
+    "device": "cpu",
+    "params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+  },
+  "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\federated\\checkpoint.pt",
+  "best_round": 5,
+  "validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.48631743549648165,
+    "balanced_accuracy": 0.39351939391005314,
+    "macro_f1": 0.3050075604421273,
+    "weighted_f1": 0.5732762099282878,
+    "macro_precision": 0.3353689813275341,
+    "macro_recall": 0.39351939391005314,
+    "confusion_matrix": [
+      [
+        103,
+        5,
+        27,
+        71,
+        11
+      ],
+      [
+        32,
+        5,
+        54,
+        31,
+        0
+      ],
+      [
+        29,
+        19,
+        263,
+        251,
+        9
+      ],
+      [
+        29,
+        16,
+        131,
+        179,
+        13
+      ],
+      [
+        751,
+        171,
+        135,
+        843,
+        1938
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.10911016949152542,
+        "recall": 0.47465437788018433,
+        "f1": 0.17743324720068906,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.023148148148148147,
+        "recall": 0.040983606557377046,
+        "f1": 0.029585798816568046,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.4311475409836066,
+        "recall": 0.46059544658493873,
+        "f1": 0.445385266723116,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.13018181818181818,
+        "recall": 0.48641304347826086,
+        "f1": 0.20539300057372348,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.9832572298325722,
+        "recall": 0.504950495049505,
+        "f1": 0.6672404888965399,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "FedAvg_simulated_clients",
+    "metadata": {
+      "selected_round": 5,
+      "test_used": false
+    }
+  },
+  "client_distribution": [
+    {
+      "client_id": 0,
+      "samples": 8000,
+      "groups": 207,
+      "dry": 375,
+      "overripe": 275,
+      "ripe": 1064,
+      "semi_ripe": 832,
+      "unripe": 5454
+    },
+    {
+      "client_id": 1,
+      "samples": 8561,
+      "groups": 207,
+      "dry": 318,
+      "overripe": 127,
+      "ripe": 828,
+      "semi_ripe": 537,
+      "unripe": 6751
+    },
+    {
+      "client_id": 2,
+      "samples": 7317,
+      "groups": 206,
+      "dry": 322,
+      "overripe": 168,
+      "ripe": 774,
+      "semi_ripe": 348,
+      "unripe": 5705
+    }
+  ],
+  "class_weights": [
+    1.263144612312317,
+    1.6855772733688354,
+    0.7793921232223511,
+    0.9711827039718628,
+    0.30070337653160095
+  ],
+  "test_accessed": false,
+  "elapsed_seconds": 5.578000000008615,
+  "limitations": [
+    "Three clients are simulated on one computer, not three real farms.",
+    "Whole capture groups are assigned after a seeded shuffle; actual class distributions are reported without assuming strong non-IID skew.",
+    "Aggregate statistics are ordinary local sums; secure aggregation and differential privacy are not implemented.",
+    "Only classifier heads are trained; the ImageNet backbone remains frozen."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "stage": "complete",
+  "completed_epochs": 5,
+  "synthetic_images": 1024,
+  "test_used": false
+}

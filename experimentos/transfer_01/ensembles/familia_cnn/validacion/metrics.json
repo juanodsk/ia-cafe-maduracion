@@ -1,0 +1,106 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.9181000781860829,
+  "balanced_accuracy": 0.7422063478959255,
+  "macro_f1": 0.7502965792921914,
+  "weighted_f1": 0.9180069324846468,
+  "macro_precision": 0.7683068719533881,
+  "macro_recall": 0.7422063478959255,
+  "confusion_matrix": [
+    [
+      181,
+      4,
+      3,
+      0,
+      29
+    ],
+    [
+      10,
+      48,
+      51,
+      13,
+      0
+    ],
+    [
+      0,
+      18,
+      473,
+      78,
+      2
+    ],
+    [
+      7,
+      9,
+      70,
+      250,
+      32
+    ],
+    [
+      9,
+      1,
+      13,
+      70,
+      3745
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.8743961352657005,
+      "recall": 0.8341013824884793,
+      "f1": 0.8537735849056604,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.6,
+      "recall": 0.39344262295081966,
+      "f1": 0.4752475247524752,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.7754098360655738,
+      "recall": 0.8283712784588442,
+      "f1": 0.8010160880609652,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.6082725060827251,
+      "recall": 0.6793478260869565,
+      "f1": 0.6418485237483954,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9834558823529411,
+      "recall": 0.9757686294945284,
+      "f1": 0.9795971749934607,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "familia_cnn",
+  "metadata": {
+    "method": "soft_voting",
+    "prediction_files": [
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\resnet50\\validacion\\predictions.csv",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\efficientnet_b0\\validacion\\predictions.csv",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\densenet121\\validacion\\predictions.csv"
+    ],
+    "normalized_weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "weight_selection": "caller_provided_or_uniform; no_test_optimization"
+  }
+}

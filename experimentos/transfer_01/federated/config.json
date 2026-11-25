@@ -1,0 +1,18 @@
+{
+  "method": "FedAvg",
+  "simulation": true,
+  "n_clients": 3,
+  "rounds": 5,
+  "local_epochs": 2,
+  "seed": 43,
+  "device": "cpu",
+  "params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+}

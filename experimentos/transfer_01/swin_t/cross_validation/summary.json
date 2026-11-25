@@ -1,0 +1,178 @@
+{
+  "method": "StratifiedGroupKFold",
+  "n_splits": 5,
+  "seed": 42,
+  "split": "train",
+  "fixed_epochs": 9,
+  "fixed_params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_samples": 19068,
+      "validation_samples": 4810,
+      "train_groups": 496,
+      "validation_groups": 124,
+      "epochs": 9,
+      "macro_f1": 0.7380821884554205,
+      "accuracy": 0.8920997920997921,
+      "balanced_accuracy": 0.7501146915182261,
+      "weighted_f1": 0.8938154389969523
+    },
+    {
+      "fold": 2,
+      "train_samples": 19506,
+      "validation_samples": 4372,
+      "train_groups": 492,
+      "validation_groups": 128,
+      "epochs": 9,
+      "macro_f1": 0.7204450814895524,
+      "accuracy": 0.9117108874656907,
+      "balanced_accuracy": 0.7406054063538235,
+      "weighted_f1": 0.9157022042383495
+    },
+    {
+      "fold": 3,
+      "train_samples": 19232,
+      "validation_samples": 4646,
+      "train_groups": 498,
+      "validation_groups": 122,
+      "epochs": 9,
+      "macro_f1": 0.7207397860267365,
+      "accuracy": 0.9033577270770555,
+      "balanced_accuracy": 0.7315537397402039,
+      "weighted_f1": 0.9068430660815199
+    },
+    {
+      "fold": 4,
+      "train_samples": 19598,
+      "validation_samples": 4280,
+      "train_groups": 500,
+      "validation_groups": 120,
+      "epochs": 9,
+      "macro_f1": 0.7936491171908763,
+      "accuracy": 0.9383177570093458,
+      "balanced_accuracy": 0.7895879243163995,
+      "weighted_f1": 0.936828501019984
+    },
+    {
+      "fold": 5,
+      "train_samples": 18108,
+      "validation_samples": 5770,
+      "train_groups": 494,
+      "validation_groups": 126,
+      "epochs": 9,
+      "macro_f1": 0.7438670119522331,
+      "accuracy": 0.9266897746967071,
+      "balanced_accuracy": 0.7455473207486294,
+      "weighted_f1": 0.9272933891848977
+    }
+  ],
+  "macro_f1_mean": 0.7433566370229638,
+  "macro_f1_std": 0.029974469043029337,
+  "oof_metrics": {
+    "num_samples": 23878,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9145238294664545,
+    "balanced_accuracy": 0.754598791736559,
+    "macro_f1": 0.7468676359388656,
+    "weighted_f1": 0.9162906037997979,
+    "macro_precision": 0.7409280176995179,
+    "macro_recall": 0.754598791736559,
+    "confusion_matrix": [
+      [
+        877,
+        40,
+        14,
+        54,
+        30
+      ],
+      [
+        42,
+        267,
+        197,
+        54,
+        10
+      ],
+      [
+        15,
+        179,
+        2061,
+        388,
+        23
+      ],
+      [
+        32,
+        44,
+        292,
+        1191,
+        158
+      ],
+      [
+        62,
+        17,
+        60,
+        330,
+        17441
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.853112840466926,
+        "recall": 0.864039408866995,
+        "f1": 0.8585413607440039,
+        "support": 1015
+      },
+      {
+        "label": "overripe",
+        "precision": 0.48811700182815354,
+        "recall": 0.46842105263157896,
+        "f1": 0.4780662488809311,
+        "support": 570
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7854420731707317,
+        "recall": 0.7730682670667667,
+        "f1": 0.7792060491493383,
+        "support": 2666
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.5904809122459098,
+        "recall": 0.6936517181129878,
+        "f1": 0.6379217996786288,
+        "support": 1717
+      },
+      {
+        "label": "unripe",
+        "precision": 0.987487260785868,
+        "recall": 0.9738135120044668,
+        "f1": 0.9806027212414259,
+        "support": 17910
+      }
+    ]
+  },
+  "cv_checkpoint_paths": [
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\cross_validation\\fold_1\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\cross_validation\\fold_2\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\cross_validation\\fold_3\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\cross_validation\\fold_4\\checkpoint.pt",
+    "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\cross_validation\\fold_5\\checkpoint.pt"
+  ],
+  "normalization": "fit separately on each fold training subset",
+  "interpretation": "CV conditional on hyperparameters and epoch budget selected on the separate fixed validation split; not nested CV."
+}

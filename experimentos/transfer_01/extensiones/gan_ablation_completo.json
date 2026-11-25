@@ -1,0 +1,310 @@
+{
+  "fingerprint": "8ed071948d7ca6443bf408c2a1a3e55852953a4e0f911754a7428bfbb2b9f84a",
+  "request": {
+    "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+    "phase": "gan_ablation",
+    "settings": {
+      "device": "cuda",
+      "model_name": "efficientnet_b0",
+      "params": {
+        "lr": 0.00011245798259119348,
+        "batch_size": 128,
+        "weight_decay": 7.068974950624607e-06,
+        "dropout": 0.2,
+        "hidden_dim": 256,
+        "class_weight_power": 0.5
+      },
+      "seed": 43,
+      "epochs": 3,
+      "select_best": false,
+      "synthetic_records_sha256": "9829b7184e80776ead1c0d87293dc0832fbc0d210c45e2185bae335683ff9ac6",
+      "gan_result_sha256": "57fd36c45a072c865c8e0a9c236e986806f1d68601c640b4971f53c0699328ac",
+      "validation_records_sha256": "1a692460b6277693dcc59adcc310348eef6f3659376ea8b4dc99d58c7c3145bd",
+      "cross_validation": false,
+      "reason_no_cv": "generator_fitted_on_all_train"
+    }
+  },
+  "result": {
+    "stage": "complete",
+    "method": "train_only_conditional_gan_augmentation_ablation",
+    "model_name": "efficientnet_b0",
+    "baseline_validation_metrics": {
+      "num_samples": 5116,
+      "class_labels": [
+        "dry",
+        "overripe",
+        "ripe",
+        "semi_ripe",
+        "unripe"
+      ],
+      "accuracy": 0.9038311180609852,
+      "balanced_accuracy": 0.7432734416519068,
+      "macro_f1": 0.7279632612655808,
+      "weighted_f1": 0.9075588897948541,
+      "macro_precision": 0.7207293373895737,
+      "macro_recall": 0.7432734416519068,
+      "confusion_matrix": [
+        [
+          163,
+          15,
+          1,
+          7,
+          31
+        ],
+        [
+          13,
+          69,
+          30,
+          10,
+          0
+        ],
+        [
+          0,
+          56,
+          463,
+          51,
+          1
+        ],
+        [
+          5,
+          24,
+          83,
+          230,
+          26
+        ],
+        [
+          6,
+          8,
+          20,
+          105,
+          3699
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "dry",
+          "precision": 0.8716577540106952,
+          "recall": 0.7511520737327189,
+          "f1": 0.806930693069307,
+          "support": 217
+        },
+        {
+          "label": "overripe",
+          "precision": 0.4011627906976744,
+          "recall": 0.5655737704918032,
+          "f1": 0.46938775510204084,
+          "support": 122
+        },
+        {
+          "label": "ripe",
+          "precision": 0.7755443886097152,
+          "recall": 0.8108581436077058,
+          "f1": 0.7928082191780822,
+          "support": 571
+        },
+        {
+          "label": "semi_ripe",
+          "precision": 0.5707196029776674,
+          "recall": 0.625,
+          "f1": 0.5966277561608301,
+          "support": 368
+        },
+        {
+          "label": "unripe",
+          "precision": 0.984562150652116,
+          "recall": 0.9637832204273059,
+          "f1": 0.9740618828176432,
+          "support": 3838
+        }
+      ],
+      "evaluation_split": "valid",
+      "model_name": "efficientnet_b0",
+      "metadata": {
+        "model_spec": {
+          "name": "efficientnet_b0",
+          "family": "cnn",
+          "weights": "EfficientNet_B0_Weights.IMAGENET1K_V1",
+          "weights_url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth",
+          "imagenet_parameters_before_head_replacement": 5288548,
+          "checkpoint_size_mb": 20.451,
+          "feature_dim": 1280,
+          "input_size": [
+            224
+          ],
+          "resize_size": [
+            256
+          ],
+          "interpolation": "bicubic",
+          "normalization_mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "normalization_std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.efficientnet_b0.html"
+        },
+        "training_scope": "classifier_head_only"
+      }
+    },
+    "validation_metrics": {
+      "num_samples": 5116,
+      "class_labels": [
+        "dry",
+        "overripe",
+        "ripe",
+        "semi_ripe",
+        "unripe"
+      ],
+      "accuracy": 0.9050039093041439,
+      "balanced_accuracy": 0.7239266636894355,
+      "macro_f1": 0.7163226914313567,
+      "weighted_f1": 0.9077951740978808,
+      "macro_precision": 0.7120845321601157,
+      "macro_recall": 0.7239266636894355,
+      "confusion_matrix": [
+        [
+          162,
+          12,
+          5,
+          7,
+          31
+        ],
+        [
+          16,
+          54,
+          39,
+          13,
+          0
+        ],
+        [
+          0,
+          51,
+          465,
+          54,
+          1
+        ],
+        [
+          6,
+          26,
+          67,
+          239,
+          30
+        ],
+        [
+          8,
+          3,
+          21,
+          96,
+          3710
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "dry",
+          "precision": 0.84375,
+          "recall": 0.7465437788018433,
+          "f1": 0.7921760391198044,
+          "support": 217
+        },
+        {
+          "label": "overripe",
+          "precision": 0.3698630136986301,
+          "recall": 0.4426229508196721,
+          "f1": 0.40298507462686567,
+          "support": 122
+        },
+        {
+          "label": "ripe",
+          "precision": 0.7788944723618091,
+          "recall": 0.8143607705779334,
+          "f1": 0.7962328767123288,
+          "support": 571
+        },
+        {
+          "label": "semi_ripe",
+          "precision": 0.5843520782396088,
+          "recall": 0.6494565217391305,
+          "f1": 0.6151866151866152,
+          "support": 368
+        },
+        {
+          "label": "unripe",
+          "precision": 0.9835630965005302,
+          "recall": 0.9666492965085982,
+          "f1": 0.9750328515111695,
+          "support": 3838
+        }
+      ],
+      "evaluation_split": "valid",
+      "model_name": "efficientnet_b0_gan_augmentation",
+      "metadata": {
+        "training_scope": "classifier_head_only",
+        "synthetic_use": "train_only",
+        "fixed_epochs": 3,
+        "training_seed": 43,
+        "validation_used_for_checkpoint_selection": false
+      }
+    },
+    "macro_f1_change": -0.011640569834224013,
+    "params": {
+      "lr": 0.00011245798259119348,
+      "batch_size": 128,
+      "weight_decay": 7.068974950624607e-06,
+      "dropout": 0.2,
+      "hidden_dim": 256,
+      "class_weight_power": 0.5
+    },
+    "training_seed": 43,
+    "baseline_training_seed": 43,
+    "fixed_epochs": 3,
+    "baseline_best_epoch": 3,
+    "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan_ablation\\checkpoint.pt",
+    "real_training_crops": 23878,
+    "synthetic_training_crops": 1024,
+    "validation_crops": 5116,
+    "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+    "cross_validation": false,
+    "reason_no_cv": "GAN fitted on all train; synthetic images would contaminate held-out train folds",
+    "test_used": false,
+    "selection_modified": false
+  },
+  "artifacts": [
+    {
+      "relative_path": "gan_ablation/checkpoint.pt",
+      "sha256": "578584eb44d7663a6cdd8dfb6d6c2ac963a0154a0ba117e52d5d22a36ca5c4a0"
+    },
+    {
+      "relative_path": "gan_ablation/history.csv",
+      "sha256": "6a4961a1063ea4557293b7b007a4143bb4543a45163b1c17270ea2cde6a62ef6"
+    },
+    {
+      "relative_path": "gan_ablation/resultado.json",
+      "sha256": "4b6e3278e9b2ee30d8e08bad8225cc3f88ef3a26a70142fe7405908a2031c5c8"
+    },
+    {
+      "relative_path": "gan_ablation/validacion/classification_report.csv",
+      "sha256": "19a65e8e29517d40388df70847eb9f178485c3d11af4d85e647db91b4dcfdae6"
+    },
+    {
+      "relative_path": "gan_ablation/validacion/confusion_matrix.csv",
+      "sha256": "0edf4c7076b6abfe02415553200e85a4f2f338813f22de62538fba6a069e53ad"
+    },
+    {
+      "relative_path": "gan_ablation/validacion/confusion_matrix.png",
+      "sha256": "972920bfbbeff741591b9393616527a852bece9161ee641a285dbfa6f0f673ff"
+    },
+    {
+      "relative_path": "gan_ablation/validacion/metrics.json",
+      "sha256": "45a2c86f3edd8164516d80e97fb16206da65c339bfe7fdc3d58f2c0b795447f2"
+    },
+    {
+      "relative_path": "gan_ablation/validacion/predictions.csv",
+      "sha256": "69d9c76d20e1134836b13ec7a3ab3a5a1e642c54a7f0ab41b665b3647279b029"
+    }
+  ],
+  "test_used": false
+}

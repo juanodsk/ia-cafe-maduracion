@@ -1,0 +1,3 @@
+rank,pid,first_epoch_samples,unique_rows,dry,overripe,ripe,semi_ripe,unripe
+0,12004,11939,11939,507,271,1318,855,8988
+1,31864,11939,11939,508,299,1348,862,8922

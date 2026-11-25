@@ -1,0 +1,11 @@
+{
+  "status": "OK",
+  "saved_full_models_reloaded": [
+    "efficientnet_b0",
+    "swin_t"
+  ],
+  "validation_prediction_alignment": true,
+  "metrics_recomputed": true,
+  "same_dataset_manifest": true,
+  "test_reserved": true
+}

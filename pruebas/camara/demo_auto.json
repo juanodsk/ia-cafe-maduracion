@@ -1,0 +1,110 @@
+[
+  {
+    "bbox": [
+      124,
+      104,
+      304,
+      291
+    ],
+    "class": "ripe",
+    "candidate_class": "ripe",
+    "score": 0.9830684065818787,
+    "detector_score": 0.9513891935348511
+  },
+  {
+    "bbox": [
+      302,
+      81,
+      492,
+      286
+    ],
+    "class": "ripe",
+    "candidate_class": "ripe",
+    "score": 0.9950001239776611,
+    "detector_score": 0.9447087049484253
+  },
+  {
+    "bbox": [
+      27,
+      0,
+      216,
+      127
+    ],
+    "class": "ripe",
+    "candidate_class": "ripe",
+    "score": 0.9862079620361328,
+    "detector_score": 0.9373522400856018
+  },
+  {
+    "bbox": [
+      425,
+      33,
+      594,
+      130
+    ],
+    "class": "ripe",
+    "candidate_class": "ripe",
+    "score": 0.9632189273834229,
+    "detector_score": 0.9025788307189941
+  },
+  {
+    "bbox": [
+      410,
+      479,
+      573,
+      629
+    ],
+    "class": "semi_ripe",
+    "candidate_class": "semi_ripe",
+    "score": 0.9931229948997498,
+    "detector_score": 0.893589198589325
+  },
+  {
+    "bbox": [
+      177,
+      566,
+      315,
+      640
+    ],
+    "class": "semi_ripe",
+    "candidate_class": "semi_ripe",
+    "score": 0.9949461817741394,
+    "detector_score": 0.8401190638542175
+  },
+  {
+    "bbox": [
+      152,
+      473,
+      280,
+      603
+    ],
+    "class": "unripe",
+    "candidate_class": "unripe",
+    "score": 0.9625407457351685,
+    "detector_score": 0.8064638376235962
+  },
+  {
+    "bbox": [
+      228,
+      436,
+      316,
+      511
+    ],
+    "class": "ripe",
+    "candidate_class": "ripe",
+    "score": 0.9589484930038452,
+    "detector_score": 0.6814937591552734
+  },
+  {
+    "bbox": [
+      386,
+      600,
+      473,
+      640
+    ],
+    "class": "semi_ripe",
+    "candidate_class": "semi_ripe",
+    "score": 0.9265291690826416,
+    "detector_score": 0.5869136452674866
+  }
+]

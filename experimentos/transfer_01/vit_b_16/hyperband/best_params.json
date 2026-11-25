@@ -1,0 +1,29 @@
+{
+  "study_name": "coffee-head-vit_b_16-seed-42",
+  "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\hyperband\\study.sqlite3",
+  "best_trial": 4,
+  "best_params": {
+    "lr": 0.00020058733363444964,
+    "batch_size": 128,
+    "weight_decay": 0.004337920697490943,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "best_validation_macro_f1": 0.7181666533824407,
+  "best_epoch": 11,
+  "training_seed": 46,
+  "data_signature": "00e51945c8b1b79500532eacbbf7a19e41adc3994c1e64d76239dbcdbca4fbc0",
+  "requested_trials": 12,
+  "completed_trials": 4,
+  "pruned_trials": 8,
+  "selection_split": "valid",
+  "settings": {
+    "seed": 42,
+    "max_epochs": 12,
+    "sampler": "RandomSampler",
+    "pruner": "HyperbandPruner",
+    "min_resource": 2,
+    "reduction_factor": 3
+  }
+}

@@ -1,0 +1,785 @@
+{
+  "schema_version": 1,
+  "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+  "best_individual_model": "efficientnet_b0",
+  "selection_rule": "validation_macro_f1_only",
+  "baseline_validation_metrics": {
+    "num_samples": 5116,
+    "class_labels": [
+      "dry",
+      "overripe",
+      "ripe",
+      "semi_ripe",
+      "unripe"
+    ],
+    "accuracy": 0.9038311180609852,
+    "balanced_accuracy": 0.7432734416519068,
+    "macro_f1": 0.7279632612655808,
+    "weighted_f1": 0.9075588897948541,
+    "macro_precision": 0.7207293373895737,
+    "macro_recall": 0.7432734416519068,
+    "confusion_matrix": [
+      [
+        163,
+        15,
+        1,
+        7,
+        31
+      ],
+      [
+        13,
+        69,
+        30,
+        10,
+        0
+      ],
+      [
+        0,
+        56,
+        463,
+        51,
+        1
+      ],
+      [
+        5,
+        24,
+        83,
+        230,
+        26
+      ],
+      [
+        6,
+        8,
+        20,
+        105,
+        3699
+      ]
+    ],
+    "per_class": [
+      {
+        "label": "dry",
+        "precision": 0.8716577540106952,
+        "recall": 0.7511520737327189,
+        "f1": 0.806930693069307,
+        "support": 217
+      },
+      {
+        "label": "overripe",
+        "precision": 0.4011627906976744,
+        "recall": 0.5655737704918032,
+        "f1": 0.46938775510204084,
+        "support": 122
+      },
+      {
+        "label": "ripe",
+        "precision": 0.7755443886097152,
+        "recall": 0.8108581436077058,
+        "f1": 0.7928082191780822,
+        "support": 571
+      },
+      {
+        "label": "semi_ripe",
+        "precision": 0.5707196029776674,
+        "recall": 0.625,
+        "f1": 0.5966277561608301,
+        "support": 368
+      },
+      {
+        "label": "unripe",
+        "precision": 0.984562150652116,
+        "recall": 0.9637832204273059,
+        "f1": 0.9740618828176432,
+        "support": 3838
+      }
+    ],
+    "evaluation_split": "valid",
+    "model_name": "efficientnet_b0",
+    "metadata": {
+      "model_spec": {
+        "name": "efficientnet_b0",
+        "family": "cnn",
+        "weights": "EfficientNet_B0_Weights.IMAGENET1K_V1",
+        "weights_url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth",
+        "imagenet_parameters_before_head_replacement": 5288548,
+        "checkpoint_size_mb": 20.451,
+        "feature_dim": 1280,
+        "input_size": [
+          224
+        ],
+        "resize_size": [
+          256
+        ],
+        "interpolation": "bicubic",
+        "normalization_mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "normalization_std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.efficientnet_b0.html"
+      },
+      "training_scope": "classifier_head_only"
+    }
+  },
+  "baseline_params": {
+    "lr": 0.00011245798259119348,
+    "batch_size": 128,
+    "weight_decay": 7.068974950624607e-06,
+    "dropout": 0.2,
+    "hidden_dim": 256,
+    "class_weight_power": 0.5
+  },
+  "baseline_training_seed": 43,
+  "baseline_best_epoch": 3,
+  "test_used": false,
+  "baseline_selection_modified": false,
+  "phases": {
+    "gan": {
+      "status": "complete",
+      "fingerprint": "08d02ae980064e072f947e8e7727bdfd3c39652951e867616cf8ad16d3cb6268",
+      "result": {
+        "stage": "complete",
+        "configuration": {
+          "architecture": "conditional_DCGAN_64",
+          "class_labels": [
+            "dry",
+            "overripe",
+            "ripe",
+            "semi_ripe",
+            "unripe"
+          ],
+          "epochs": 5,
+          "steps_per_epoch": 80,
+          "batch_size": 64,
+          "seed": 42,
+          "synthetic_per_minority_class": 256,
+          "latent_dim": 64,
+          "base_channels": 32,
+          "embedding_dim": 16,
+          "learning_rate": 0.0002,
+          "adam_betas": [
+            0.5,
+            0.999
+          ],
+          "real_range": [
+            -1,
+            1
+          ],
+          "training_records_sha256": "cdc370dc4ed51c42960b66074a5a1283fd1a36d2f48924a834840d74b2bcc95a",
+          "train_crops": 23878,
+          "train_class_counts": {
+            "unripe": 17910,
+            "ripe": 2666,
+            "semi_ripe": 1717,
+            "overripe": 570,
+            "dry": 1015
+          },
+          "sampled_images_per_epoch": 5120,
+          "train_sampler": "WeightedRandomSampler_inverse_class_frequency_with_replacement",
+          "workers": 2,
+          "device": "cuda",
+          "torch": "2.9.1+cu128",
+          "new_augmentation": "horizontal_flip_only; no colour changes",
+          "test_used": false,
+          "discriminator_generator_update_mode": "train_batchnorm_frozen_parameters",
+          "pilot": true
+        },
+        "generator_run_id": "0074b6cf5ce6d88d",
+        "completed_epochs": 5,
+        "total_steps": 400,
+        "training_seconds_this_invocation": 135.375,
+        "generator_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\generator.pt",
+        "discriminator_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\discriminator.pt",
+        "training_checkpoint": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\checkpoints\\training_last.pt",
+        "history_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\history.csv",
+        "synthetic_manifest": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan\\synthetic_train.csv",
+        "synthetic_images": 1024,
+        "synthetic_class_counts": {
+          "dry": 256,
+          "overripe": 256,
+          "ripe": 256,
+          "semi_ripe": 256
+        },
+        "test_used": false,
+        "final_losses": {
+          "loss_d": 0.13455824553966522,
+          "loss_g": 5.89736270904541
+        },
+        "limitations": [
+          "Small conditional GAN pilot; generated images and requested labels require visual/expert review.",
+          "GAN losses are not image quality or classification accuracy metrics.",
+          "Synthetic images may only augment training; validation and test remain real and unchanged.",
+          "This generator saw all fixed training images. Do not use its synthetic images in held-out CV folds; train a fold-specific GAN for that.",
+          "Source v5 training crops include inherited shear/exposure augmentations."
+        ]
+      },
+      "reused": false
+    },
+    "gan_ablation": {
+      "status": "complete",
+      "fingerprint": "8ed071948d7ca6443bf408c2a1a3e55852953a4e0f911754a7428bfbb2b9f84a",
+      "result": {
+        "stage": "complete",
+        "method": "train_only_conditional_gan_augmentation_ablation",
+        "model_name": "efficientnet_b0",
+        "baseline_validation_metrics": {
+          "num_samples": 5116,
+          "class_labels": [
+            "dry",
+            "overripe",
+            "ripe",
+            "semi_ripe",
+            "unripe"
+          ],
+          "accuracy": 0.9038311180609852,
+          "balanced_accuracy": 0.7432734416519068,
+          "macro_f1": 0.7279632612655808,
+          "weighted_f1": 0.9075588897948541,
+          "macro_precision": 0.7207293373895737,
+          "macro_recall": 0.7432734416519068,
+          "confusion_matrix": [
+            [
+              163,
+              15,
+              1,
+              7,
+              31
+            ],
+            [
+              13,
+              69,
+              30,
+              10,
+              0
+            ],
+            [
+              0,
+              56,
+              463,
+              51,
+              1
+            ],
+            [
+              5,
+              24,
+              83,
+              230,
+              26
+            ],
+            [
+              6,
+              8,
+              20,
+              105,
+              3699
+            ]
+          ],
+          "per_class": [
+            {
+              "label": "dry",
+              "precision": 0.8716577540106952,
+              "recall": 0.7511520737327189,
+              "f1": 0.806930693069307,
+              "support": 217
+            },
+            {
+              "label": "overripe",
+              "precision": 0.4011627906976744,
+              "recall": 0.5655737704918032,
+              "f1": 0.46938775510204084,
+              "support": 122
+            },
+            {
+              "label": "ripe",
+              "precision": 0.7755443886097152,
+              "recall": 0.8108581436077058,
+              "f1": 0.7928082191780822,
+              "support": 571
+            },
+            {
+              "label": "semi_ripe",
+              "precision": 0.5707196029776674,
+              "recall": 0.625,
+              "f1": 0.5966277561608301,
+              "support": 368
+            },
+            {
+              "label": "unripe",
+              "precision": 0.984562150652116,
+              "recall": 0.9637832204273059,
+              "f1": 0.9740618828176432,
+              "support": 3838
+            }
+          ],
+          "evaluation_split": "valid",
+          "model_name": "efficientnet_b0",
+          "metadata": {
+            "model_spec": {
+              "name": "efficientnet_b0",
+              "family": "cnn",
+              "weights": "EfficientNet_B0_Weights.IMAGENET1K_V1",
+              "weights_url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth",
+              "imagenet_parameters_before_head_replacement": 5288548,
+              "checkpoint_size_mb": 20.451,
+              "feature_dim": 1280,
+              "input_size": [
+                224
+              ],
+              "resize_size": [
+                256
+              ],
+              "interpolation": "bicubic",
+              "normalization_mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "normalization_std": [
+                0.229,
+                0.224,
+                0.225
+              ],
+              "reference": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.efficientnet_b0.html"
+            },
+            "training_scope": "classifier_head_only"
+          }
+        },
+        "validation_metrics": {
+          "num_samples": 5116,
+          "class_labels": [
+            "dry",
+            "overripe",
+            "ripe",
+            "semi_ripe",
+            "unripe"
+          ],
+          "accuracy": 0.9050039093041439,
+          "balanced_accuracy": 0.7239266636894355,
+          "macro_f1": 0.7163226914313567,
+          "weighted_f1": 0.9077951740978808,
+          "macro_precision": 0.7120845321601157,
+          "macro_recall": 0.7239266636894355,
+          "confusion_matrix": [
+            [
+              162,
+              12,
+              5,
+              7,
+              31
+            ],
+            [
+              16,
+              54,
+              39,
+              13,
+              0
+            ],
+            [
+              0,
+              51,
+              465,
+              54,
+              1
+            ],
+            [
+              6,
+              26,
+              67,
+              239,
+              30
+            ],
+            [
+              8,
+              3,
+              21,
+              96,
+              3710
+            ]
+          ],
+          "per_class": [
+            {
+              "label": "dry",
+              "precision": 0.84375,
+              "recall": 0.7465437788018433,
+              "f1": 0.7921760391198044,
+              "support": 217
+            },
+            {
+              "label": "overripe",
+              "precision": 0.3698630136986301,
+              "recall": 0.4426229508196721,
+              "f1": 0.40298507462686567,
+              "support": 122
+            },
+            {
+              "label": "ripe",
+              "precision": 0.7788944723618091,
+              "recall": 0.8143607705779334,
+              "f1": 0.7962328767123288,
+              "support": 571
+            },
+            {
+              "label": "semi_ripe",
+              "precision": 0.5843520782396088,
+              "recall": 0.6494565217391305,
+              "f1": 0.6151866151866152,
+              "support": 368
+            },
+            {
+              "label": "unripe",
+              "precision": 0.9835630965005302,
+              "recall": 0.9666492965085982,
+              "f1": 0.9750328515111695,
+              "support": 3838
+            }
+          ],
+          "evaluation_split": "valid",
+          "model_name": "efficientnet_b0_gan_augmentation",
+          "metadata": {
+            "training_scope": "classifier_head_only",
+            "synthetic_use": "train_only",
+            "fixed_epochs": 3,
+            "training_seed": 43,
+            "validation_used_for_checkpoint_selection": false
+          }
+        },
+        "macro_f1_change": -0.011640569834224013,
+        "params": {
+          "lr": 0.00011245798259119348,
+          "batch_size": 128,
+          "weight_decay": 7.068974950624607e-06,
+          "dropout": 0.2,
+          "hidden_dim": 256,
+          "class_weight_power": 0.5
+        },
+        "training_seed": 43,
+        "baseline_training_seed": 43,
+        "fixed_epochs": 3,
+        "baseline_best_epoch": 3,
+        "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\gan_ablation\\checkpoint.pt",
+        "real_training_crops": 23878,
+        "synthetic_training_crops": 1024,
+        "validation_crops": 5116,
+        "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+        "cross_validation": false,
+        "reason_no_cv": "GAN fitted on all train; synthetic images would contaminate held-out train folds",
+        "test_used": false,
+        "selection_modified": false
+      },
+      "reused": false
+    },
+    "federated": {
+      "status": "complete",
+      "fingerprint": "d13ff10b5cc7521c3aad0d8cc92dd3ca0aa636833bb8664a07b58d3b871d5ded",
+      "result": {
+        "method": "FedAvg",
+        "config": {
+          "method": "FedAvg",
+          "simulation": true,
+          "n_clients": 3,
+          "rounds": 5,
+          "local_epochs": 2,
+          "seed": 43,
+          "device": "cpu",
+          "params": {
+            "lr": 0.00011245798259119348,
+            "batch_size": 128,
+            "weight_decay": 7.068974950624607e-06,
+            "dropout": 0.2,
+            "hidden_dim": 256,
+            "class_weight_power": 0.5
+          },
+          "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+        },
+        "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\federated\\checkpoint.pt",
+        "best_round": 5,
+        "validation_metrics": {
+          "num_samples": 5116,
+          "class_labels": [
+            "dry",
+            "overripe",
+            "ripe",
+            "semi_ripe",
+            "unripe"
+          ],
+          "accuracy": 0.48631743549648165,
+          "balanced_accuracy": 0.39351939391005314,
+          "macro_f1": 0.3050075604421273,
+          "weighted_f1": 0.5732762099282878,
+          "macro_precision": 0.3353689813275341,
+          "macro_recall": 0.39351939391005314,
+          "confusion_matrix": [
+            [
+              103,
+              5,
+              27,
+              71,
+              11
+            ],
+            [
+              32,
+              5,
+              54,
+              31,
+              0
+            ],
+            [
+              29,
+              19,
+              263,
+              251,
+              9
+            ],
+            [
+              29,
+              16,
+              131,
+              179,
+              13
+            ],
+            [
+              751,
+              171,
+              135,
+              843,
+              1938
+            ]
+          ],
+          "per_class": [
+            {
+              "label": "dry",
+              "precision": 0.10911016949152542,
+              "recall": 0.47465437788018433,
+              "f1": 0.17743324720068906,
+              "support": 217
+            },
+            {
+              "label": "overripe",
+              "precision": 0.023148148148148147,
+              "recall": 0.040983606557377046,
+              "f1": 0.029585798816568046,
+              "support": 122
+            },
+            {
+              "label": "ripe",
+              "precision": 0.4311475409836066,
+              "recall": 0.46059544658493873,
+              "f1": 0.445385266723116,
+              "support": 571
+            },
+            {
+              "label": "semi_ripe",
+              "precision": 0.13018181818181818,
+              "recall": 0.48641304347826086,
+              "f1": 0.20539300057372348,
+              "support": 368
+            },
+            {
+              "label": "unripe",
+              "precision": 0.9832572298325722,
+              "recall": 0.504950495049505,
+              "f1": 0.6672404888965399,
+              "support": 3838
+            }
+          ],
+          "evaluation_split": "valid",
+          "model_name": "FedAvg_simulated_clients",
+          "metadata": {
+            "selected_round": 5,
+            "test_used": false
+          }
+        },
+        "client_distribution": [
+          {
+            "client_id": 0,
+            "samples": 8000,
+            "groups": 207,
+            "dry": 375,
+            "overripe": 275,
+            "ripe": 1064,
+            "semi_ripe": 832,
+            "unripe": 5454
+          },
+          {
+            "client_id": 1,
+            "samples": 8561,
+            "groups": 207,
+            "dry": 318,
+            "overripe": 127,
+            "ripe": 828,
+            "semi_ripe": 537,
+            "unripe": 6751
+          },
+          {
+            "client_id": 2,
+            "samples": 7317,
+            "groups": 206,
+            "dry": 322,
+            "overripe": 168,
+            "ripe": 774,
+            "semi_ripe": 348,
+            "unripe": 5705
+          }
+        ],
+        "class_weights": [
+          1.263144612312317,
+          1.6855772733688354,
+          0.7793921232223511,
+          0.9711827039718628,
+          0.30070337653160095
+        ],
+        "test_accessed": false,
+        "elapsed_seconds": 5.578000000008615,
+        "limitations": [
+          "Three clients are simulated on one computer, not three real farms.",
+          "Whole capture groups are assigned after a seeded shuffle; actual class distributions are reported without assuming strong non-IID skew.",
+          "Aggregate statistics are ordinary local sums; secure aggregation and differential privacy are not implemented.",
+          "Only classifier heads are trained; the ImageNet backbone remains frozen."
+        ]
+      },
+      "reused": false
+    },
+    "distributed": {
+      "status": "complete",
+      "fingerprint": "6b7ab49136790962cc0570198a6096d05c25f25651ff06ab1d25b61431fce8da",
+      "result": {
+        "method": "DistributedDataParallel",
+        "config": {
+          "method": "DistributedDataParallel",
+          "backend": "gloo",
+          "device": "cpu",
+          "torch_version": "2.7.1+cpu",
+          "world_size": 2,
+          "epochs": 2,
+          "seed": 43,
+          "params": {
+            "lr": 0.00011245798259119348,
+            "batch_size": 128,
+            "weight_decay": 7.068974950624607e-06,
+            "dropout": 0.2,
+            "hidden_dim": 256,
+            "class_weight_power": 0.5
+          },
+          "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+        },
+        "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\checkpoint.pt",
+        "validation_metrics": {
+          "num_samples": 5116,
+          "class_labels": [
+            "dry",
+            "overripe",
+            "ripe",
+            "semi_ripe",
+            "unripe"
+          ],
+          "accuracy": 0.8903440187646599,
+          "balanced_accuracy": 0.7190245590454961,
+          "macro_f1": 0.7029109763187471,
+          "weighted_f1": 0.8961089042479209,
+          "macro_precision": 0.6931381904812606,
+          "macro_recall": 0.7190245590454961,
+          "confusion_matrix": [
+            [
+              166,
+              10,
+              3,
+              9,
+              29
+            ],
+            [
+              15,
+              52,
+              44,
+              11,
+              0
+            ],
+            [
+              0,
+              42,
+              459,
+              69,
+              1
+            ],
+            [
+              5,
+              23,
+              74,
+              240,
+              26
+            ],
+            [
+              8,
+              14,
+              26,
+              152,
+              3638
+            ]
+          ],
+          "per_class": [
+            {
+              "label": "dry",
+              "precision": 0.8556701030927835,
+              "recall": 0.7649769585253456,
+              "f1": 0.8077858880778589,
+              "support": 217
+            },
+            {
+              "label": "overripe",
+              "precision": 0.36879432624113473,
+              "recall": 0.4262295081967213,
+              "f1": 0.39543726235741444,
+              "support": 122
+            },
+            {
+              "label": "ripe",
+              "precision": 0.7574257425742574,
+              "recall": 0.8038528896672504,
+              "f1": 0.7799490229396772,
+              "support": 571
+            },
+            {
+              "label": "semi_ripe",
+              "precision": 0.498960498960499,
+              "recall": 0.6521739130434783,
+              "f1": 0.5653710247349824,
+              "support": 368
+            },
+            {
+              "label": "unripe",
+              "precision": 0.9848402815376286,
+              "recall": 0.9478895257946848,
+              "f1": 0.9660116834838024,
+              "support": 3838
+            }
+          ],
+          "evaluation_split": "valid",
+          "model_name": "DDP_CPU_Gloo",
+          "metadata": {
+            "world_size": 2,
+            "epochs": 2,
+            "test_used": false
+          }
+        },
+        "rank_model_state_sha256": [
+          "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba",
+          "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba"
+        ],
+        "rank_states_identical": true,
+        "effective_global_batch_size": 256,
+        "sampler_padding_rows_per_epoch": 0,
+        "test_accessed": false,
+        "elapsed_seconds": 3.8439999999827705,
+        "limitations": [
+          "Two real CPU processes run on the same machine; this is not a multi-GPU or multi-machine speed benchmark.",
+          "Only the classifier head is updated; the pretrained backbone is frozen.",
+          "The fixed two-epoch pilot budget is descriptive and differs from tuned baseline training."
+        ]
+      },
+      "reused": false
+    }
+  }
+}

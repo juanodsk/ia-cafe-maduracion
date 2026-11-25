@@ -1,0 +1,242 @@
+{
+  "fingerprint": "6b7ab49136790962cc0570198a6096d05c25f25651ff06ab1d25b61431fce8da",
+  "request": {
+    "baseline_fingerprint": "f7c4d8f369d360f8026a6c085f3926c54ef014ed5173bcbc2b5c17d6ea7c646f",
+    "phase": "distributed",
+    "settings": {
+      "params": {
+        "lr": 0.00011245798259119348,
+        "batch_size": 128,
+        "weight_decay": 7.068974950624607e-06,
+        "dropout": 0.2,
+        "hidden_dim": 256,
+        "class_weight_power": 0.5
+      },
+      "world_size": 2,
+      "epochs": 2,
+      "seed": 43,
+      "device": "cpu",
+      "backend": "gloo"
+    }
+  },
+  "result": {
+    "method": "DistributedDataParallel",
+    "config": {
+      "method": "DistributedDataParallel",
+      "backend": "gloo",
+      "device": "cpu",
+      "torch_version": "2.7.1+cpu",
+      "world_size": 2,
+      "epochs": 2,
+      "seed": 43,
+      "params": {
+        "lr": 0.00011245798259119348,
+        "batch_size": 128,
+        "weight_decay": 7.068974950624607e-06,
+        "dropout": 0.2,
+        "hidden_dim": 256,
+        "class_weight_power": 0.5
+      },
+      "data_signature": "7a28b0ee0a6f5862e864d25fced4dc796786a50184f86b48105ea5e4918600f4"
+    },
+    "checkpoint_path": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\distributed\\checkpoint.pt",
+    "validation_metrics": {
+      "num_samples": 5116,
+      "class_labels": [
+        "dry",
+        "overripe",
+        "ripe",
+        "semi_ripe",
+        "unripe"
+      ],
+      "accuracy": 0.8903440187646599,
+      "balanced_accuracy": 0.7190245590454961,
+      "macro_f1": 0.7029109763187471,
+      "weighted_f1": 0.8961089042479209,
+      "macro_precision": 0.6931381904812606,
+      "macro_recall": 0.7190245590454961,
+      "confusion_matrix": [
+        [
+          166,
+          10,
+          3,
+          9,
+          29
+        ],
+        [
+          15,
+          52,
+          44,
+          11,
+          0
+        ],
+        [
+          0,
+          42,
+          459,
+          69,
+          1
+        ],
+        [
+          5,
+          23,
+          74,
+          240,
+          26
+        ],
+        [
+          8,
+          14,
+          26,
+          152,
+          3638
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "dry",
+          "precision": 0.8556701030927835,
+          "recall": 0.7649769585253456,
+          "f1": 0.8077858880778589,
+          "support": 217
+        },
+        {
+          "label": "overripe",
+          "precision": 0.36879432624113473,
+          "recall": 0.4262295081967213,
+          "f1": 0.39543726235741444,
+          "support": 122
+        },
+        {
+          "label": "ripe",
+          "precision": 0.7574257425742574,
+          "recall": 0.8038528896672504,
+          "f1": 0.7799490229396772,
+          "support": 571
+        },
+        {
+          "label": "semi_ripe",
+          "precision": 0.498960498960499,
+          "recall": 0.6521739130434783,
+          "f1": 0.5653710247349824,
+          "support": 368
+        },
+        {
+          "label": "unripe",
+          "precision": 0.9848402815376286,
+          "recall": 0.9478895257946848,
+          "f1": 0.9660116834838024,
+          "support": 3838
+        }
+      ],
+      "evaluation_split": "valid",
+      "model_name": "DDP_CPU_Gloo",
+      "metadata": {
+        "world_size": 2,
+        "epochs": 2,
+        "test_used": false
+      }
+    },
+    "rank_model_state_sha256": [
+      "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba",
+      "f9f3fc03a5c95387e12a77c14dd1484fb155723ff1a2d1b4d764ecc6f20c81ba"
+    ],
+    "rank_states_identical": true,
+    "effective_global_batch_size": 256,
+    "sampler_padding_rows_per_epoch": 0,
+    "test_accessed": false,
+    "elapsed_seconds": 3.8439999999827705,
+    "limitations": [
+      "Two real CPU processes run on the same machine; this is not a multi-GPU or multi-machine speed benchmark.",
+      "Only the classifier head is updated; the pretrained backbone is frozen.",
+      "The fixed two-epoch pilot budget is descriptive and differs from tuned baseline training."
+    ]
+  },
+  "artifacts": [
+    {
+      "relative_path": "distributed/checkpoint.pt",
+      "sha256": "70f11da04d3969da61db1ff3eaecd82b6edaa307dad185b0e9af9bae2e7a0355"
+    },
+    {
+      "relative_path": "distributed/config.json",
+      "sha256": "210b5054eb28d5356a09ce2d1013286e58d3ef5d7f8c554d2cd75d2d1dbecfa0"
+    },
+    {
+      "relative_path": "distributed/epoch_curves.png",
+      "sha256": "756a82249b7e20d1aeb7ad098adf53b2950b1ee018da0994cc2885c4c3e690c1"
+    },
+    {
+      "relative_path": "distributed/epoch_metrics.csv",
+      "sha256": "1deff766fe9f28e77cc85cf9fa555de97059f2e2b8252e178d440ca07d329134"
+    },
+    {
+      "relative_path": "distributed/inputs/train_features.npy",
+      "sha256": "1e8c97a1eaad56888ad94eac6bd85f6e95859dfc81bbc286e349ccc7e1596d0a"
+    },
+    {
+      "relative_path": "distributed/inputs/train_targets.npy",
+      "sha256": "15476a96c453776c2507341bd73b7cc97f8c159dab324b7c01380f871ec733f9"
+    },
+    {
+      "relative_path": "distributed/inputs/valid_features.npy",
+      "sha256": "7d11a9fedbcd1de388b5a6c2dbd6370dffc3fea4eb068ecfe5ab92ca60ea132a"
+    },
+    {
+      "relative_path": "distributed/inputs/valid_records.json",
+      "sha256": "6e01814f103a165c6da76ab9c742b85103ca3e9e81aae89b14d5cd199f6db03f"
+    },
+    {
+      "relative_path": "distributed/inputs/valid_targets.npy",
+      "sha256": "83eff5d637bed12d1a2d5fde53637e974c51265b6ff5bc54d306bb96edab2187"
+    },
+    {
+      "relative_path": "distributed/launch.json",
+      "sha256": "c2f33d501cd7e675295036ece20098dad769fa749fab534f673789edc36b74db"
+    },
+    {
+      "relative_path": "distributed/metrics.json",
+      "sha256": "8e1aab5f40146871c6c64a1e4c8d516ffb81f3e5deea5d251a9bf2621e6e7343"
+    },
+    {
+      "relative_path": "distributed/rank_0.json",
+      "sha256": "7e9e3a4519177573171e58114f2acad9c28bb4ee433ea0008152ae854d77b31b"
+    },
+    {
+      "relative_path": "distributed/rank_1.json",
+      "sha256": "01e847be64449bf5c9a0b7abe4c0c53f7f0dbe1b855d9c88cf59107b988c9b85"
+    },
+    {
+      "relative_path": "distributed/rank_assignments_first_epoch.csv",
+      "sha256": "040359210cc58ca4a81831b3c6ae2e2f7a8c55a65dcc4c4d1a6068d207cb237b"
+    },
+    {
+      "relative_path": "distributed/rank_distribution.csv",
+      "sha256": "147c3b84cc95278608e3c5e646a1100aa8f6024b546c14c352598b685a2d0364"
+    },
+    {
+      "relative_path": "distributed/summary.json",
+      "sha256": "aff05793f4487c50ccd60d85bf355ae89f01e479de55e560553c4eacdb9d6fe4"
+    },
+    {
+      "relative_path": "distributed/validation/classification_report.csv",
+      "sha256": "a78c9c2f97cb916cf1a2ec81771bcb9cbcbf844f3134c9ca0ffc7c89592bcc97"
+    },
+    {
+      "relative_path": "distributed/validation/confusion_matrix.csv",
+      "sha256": "50eaf9a400f7ff1558f85f2fff5452b54f9f001d60ddcdc2045667aa249fd4ee"
+    },
+    {
+      "relative_path": "distributed/validation/confusion_matrix.png",
+      "sha256": "01bdc8ef85930a5a915a0d0761ad7dd7b96a3467cd799f9318c6c360c89d3155"
+    },
+    {
+      "relative_path": "distributed/validation/metrics.json",
+      "sha256": "8e1aab5f40146871c6c64a1e4c8d516ffb81f3e5deea5d251a9bf2621e6e7343"
+    },
+    {
+      "relative_path": "distributed/validation/predictions.csv",
+      "sha256": "c4b3e5b249272c6dd9f0625e26dde3a6b23f0b342e7c11fc106a40d2c90f3d24"
+    }
+  ],
+  "test_used": false
+}

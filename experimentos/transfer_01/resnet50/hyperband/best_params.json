@@ -1,0 +1,29 @@
+{
+  "study_name": "coffee-head-resnet50-seed-42",
+  "study_database": "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\resnet50\\hyperband\\study.sqlite3",
+  "best_trial": 0,
+  "best_params": {
+    "lr": 0.0008468008575248334,
+    "batch_size": 128,
+    "weight_decay": 0.0002481040974867811,
+    "dropout": 0.0,
+    "hidden_dim": 256,
+    "class_weight_power": 1.0
+  },
+  "best_validation_macro_f1": 0.7006233885102268,
+  "best_epoch": 8,
+  "training_seed": 42,
+  "data_signature": "2ad9d0724e2c3def0b23973684c2c26e333e62482735382364259a13b2c16c46",
+  "requested_trials": 12,
+  "completed_trials": 4,
+  "pruned_trials": 8,
+  "selection_split": "valid",
+  "settings": {
+    "seed": 42,
+    "max_epochs": 12,
+    "sampler": "RandomSampler",
+    "pruner": "HyperbandPruner",
+    "min_resource": 2,
+    "reduction_factor": 3
+  }
+}

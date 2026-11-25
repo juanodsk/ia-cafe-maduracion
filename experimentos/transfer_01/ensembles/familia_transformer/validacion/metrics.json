@@ -1,0 +1,104 @@
+{
+  "num_samples": 5116,
+  "class_labels": [
+    "dry",
+    "overripe",
+    "ripe",
+    "semi_ripe",
+    "unripe"
+  ],
+  "accuracy": 0.9157544956997654,
+  "balanced_accuracy": 0.7226915808812742,
+  "macro_f1": 0.7311309706037831,
+  "weighted_f1": 0.9151406366822662,
+  "macro_precision": 0.7460039587581546,
+  "macro_recall": 0.7226915808812742,
+  "confusion_matrix": [
+    [
+      162,
+      15,
+      0,
+      6,
+      34
+    ],
+    [
+      16,
+      44,
+      45,
+      17,
+      0
+    ],
+    [
+      0,
+      21,
+      488,
+      56,
+      6
+    ],
+    [
+      6,
+      8,
+      70,
+      249,
+      35
+    ],
+    [
+      10,
+      0,
+      18,
+      68,
+      3742
+    ]
+  ],
+  "per_class": [
+    {
+      "label": "dry",
+      "precision": 0.8350515463917526,
+      "recall": 0.7465437788018433,
+      "f1": 0.7883211678832117,
+      "support": 217
+    },
+    {
+      "label": "overripe",
+      "precision": 0.5,
+      "recall": 0.36065573770491804,
+      "f1": 0.41904761904761906,
+      "support": 122
+    },
+    {
+      "label": "ripe",
+      "precision": 0.785829307568438,
+      "recall": 0.8546409807355516,
+      "f1": 0.8187919463087249,
+      "support": 571
+    },
+    {
+      "label": "semi_ripe",
+      "precision": 0.6287878787878788,
+      "recall": 0.6766304347826086,
+      "f1": 0.6518324607329843,
+      "support": 368
+    },
+    {
+      "label": "unripe",
+      "precision": 0.9803510610427036,
+      "recall": 0.9749869723814487,
+      "f1": 0.9776616590463749,
+      "support": 3838
+    }
+  ],
+  "evaluation_split": "valid",
+  "model_name": "familia_transformer",
+  "metadata": {
+    "method": "soft_voting",
+    "prediction_files": [
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\vit_b_16\\validacion\\predictions.csv",
+      "C:\\Users\\juanp\\Desktop\\juan-castro\\experimentos\\transfer_01\\swin_t\\validacion\\predictions.csv"
+    ],
+    "normalized_weights": [
+      0.5,
+      0.5
+    ],
+    "weight_selection": "caller_provided_or_uniform; no_test_optimization"
+  }
+}
