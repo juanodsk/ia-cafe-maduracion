@@ -37,6 +37,8 @@ La descarga original está conservada en `imagenes/`. El dataset preparado exclu
 
 ## Documentación
 
+- [Informe técnico completo y guion de 20 diapositivas en Word](docs/documentacion_tecnica_cafe.docx).
+
 - [Partición preparada y reproducibilidad](docs/particion_dataset.md).
 - [Datos de la descarga y captura original de Roboflow](docs/dataset.md).
 - [Distribución en CSV](dataset_preparado/csv/distribucion.csv).
